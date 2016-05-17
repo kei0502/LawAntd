@@ -4252,4 +4252,5 @@ const chinaSelect = [{
   "value": " 810000",
   "label": " 香  港",
   "children": []
-}, {"value": " 820000", "label": " 澳  门", "children": []}]
+}, {"value": " 820000", "label": " 澳  门", "children": []}];
+module.exports=chinaSelect;

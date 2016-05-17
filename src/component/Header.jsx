@@ -106,13 +106,10 @@ const Header = React.createClass ({
   },
   render() {
     return(
-    <div style={{background:"#333",height:50}}>
-      <Row>
-        <Col span={6}><span style={{fontSize:20,lineHeight:50}}>法务平台</span></Col>
+      <Row style={{background:"#333",height:"50px"}}>
+        <Col span={6}><span style={{fontSize:"20px",lineHeight:"50px"}}>法务平台</span></Col>
         {this.getInfoNav()}
-
       </Row>
-    </div>
     );
   }
 });

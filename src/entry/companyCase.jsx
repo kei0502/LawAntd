@@ -22,7 +22,7 @@ export default class CompanyCase extends React.Component {
               </Breadcrumb>
             </Row>
             <Row>
-              <Col span={24}>
+              <Col span={23}>
                 <Card title="法院信息">
                   <FormCourt />
                 </Card>

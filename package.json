@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "entry": {
-    "userIndex": "./src/entry/userIndex.jsx",
     "companyCase": "./src/entry/companyCase.jsx"
   },
   "dependencies": {
@@ -26,9 +25,6 @@
     "eslint-plugin-react": "4.x",
     "pre-commit": "1.x"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "scripts": {
     "start": "dora -p 8001 --plugins \"webpack,hmr,proxy,livereload?enableJs=false\"",
     "lint": "eslint --ext .js,.jsx src",
