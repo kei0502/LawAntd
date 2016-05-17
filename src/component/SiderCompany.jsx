@@ -22,7 +22,7 @@ const SiderCompany = React.createClass({
               style={{width:'100%'}}
               mode="inline">
           <SubMenu key="sub1" title="案件立项">
-            <Menu.Item key="sub_1"><a href="case.html">案件管理</a></Menu.Item>
+            <Menu.Item key="sub_1"><a href="companyCase.html">案件管理</a></Menu.Item>
             <Menu.Item key="sub_2"><a href="right.html">权限管理</a></Menu.Item>
           </SubMenu>
           <Menu.Item key="menu1">案件流程管理</Menu.Item>

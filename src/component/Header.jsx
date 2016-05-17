@@ -93,11 +93,33 @@ const Header = React.createClass ({
       );
     }
     else{
+      var role;
+      if(this.props.user.role==1){
+        role='债权人';
+      }
+      else if(this.props.user.role==2){
+        role='管理人';
+      }
+      else if(this.props.user.role==3){
+        role='工作人员';
+      }
+      else if(this.props.user.role==4){
+        role='法院';
+      }
+      else if(this.props.user.role==5){
+        role='平台管理员';
+      }
+      else if(this.props.user.role==6){
+        role='公司';
+      }
+      else if(this.props.user.role==7){
+        role='会计';
+      }
       return(
-        <Col span={4} offset={13}>
+        <Col span={4} offset={14}>
           <Dropdown overlay={infoMenu} trigger={['click']}>
-            <a style={{lineHeight:50}} className="ant-dropdown-link" href="#">
-              {this.props.user}<Icon type="down" />
+            <a style={{lineHeight:'50px'}} className="ant-dropdown-link" href="#">
+              {this.props.user.name+'/'+role}<Icon type="down" />
             </a>
           </Dropdown>
         </Col>
@@ -107,7 +129,7 @@ const Header = React.createClass ({
   render() {
     return(
       <Row style={{background:"#333",height:"50px"}}>
-        <Col span={6}><span style={{fontSize:"20px",lineHeight:"50px"}}>法务平台</span></Col>
+        <Col span={6}><span style={{fontSize:"20px",lineHeight:"50px",marginLeft:'20px'}}>法务平台</span></Col>
         {this.getInfoNav()}
       </Row>
     );

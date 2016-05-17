@@ -7,14 +7,15 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 
 export default class CompanyCase extends React.Component {
+
   render() {
     return(
       <div>
-        <Header />
+        <Header user={this.props.user}/>
         <Row>
           <Col span={4}><SiderCompany /></Col>
           <Col span={20}>
-            <Row>
+            <Row style={{margin:'5px 10px'}}>
               <Breadcrumb separator=">">
                 <Breadcrumb.Item>管理人</Breadcrumb.Item>
                 <Breadcrumb.Item>案件立项</Breadcrumb.Item>
@@ -22,8 +23,8 @@ export default class CompanyCase extends React.Component {
               </Breadcrumb>
             </Row>
             <Row>
-              <Col span={23}>
-                <Card title="法院信息">
+              <Col span={22} offset={1}>
+                <Card title="法院信息" style={{marginTop: '20px'}}>
                   <FormCourt />
                 </Card>
               </Col>
@@ -34,4 +35,5 @@ export default class CompanyCase extends React.Component {
       );
   }
 }
-ReactDOM.render(<CompanyCase/>, document.getElementById('react-content'));
+var userObj={name:'管理员一',role:2};
+ReactDOM.render(<CompanyCase user={userObj}/>, document.getElementById('react-content'));

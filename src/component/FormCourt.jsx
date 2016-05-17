@@ -3,56 +3,54 @@ import React from 'react';
 import { Col, Form, Cascader, Input, Button } from 'antd';
 const FormItem = Form.Item;
 const InputGroup = Input.Group;
-import chinaSelect from '../common/chinaSelect'
+import chinaSelect from '../common/chinaSelect';
 
 const FormCourt = React.createClass({
-  //省市区三级菜单
-  onChange(value) {
-    console.log(value);
-  },
-  // 省市区三级菜单只展示最后一项
-  displayRender(label) {
-    return label[label.length - 1];
-  },
   render() {
     const formItemLayout = {
       labelCol: {span: 6},
       wrapperCol: {span: 16}
     };
+    console.log(this.props.form);
     return (
-      <Form horizontal onSubmit={this.handleSubmit}>
+      <Form horizontal form={this.props.form} onSubmit={this.handleSubmit}>
         <FormItem
           {...formItemLayout}
           label="审理法院：">
-          <InputGroup>
-            <Col span="12">
-              <Cascader options={chinaSelect}
-                        displayRender={this.displayRender} onChange={this.onChange}/>
-            </Col>
-            <Col span="12">
-              <Input type="text" ref="courtName"/>
-            </Col>
-          </InputGroup>
+          <Col span={11}>
+            <Cascader options={chinaSelect} placeholder="省市区"/>
+          </Col>
+          <Col span={12} offset={1}>
+            <Input type="text" ref="courtName" placeholder="具体地址"/>
+          </Col>
         </FormItem>
         <FormItem
           {...formItemLayout}
           label="主审法官：">
-          <Input type="text" ref="judgeName"/>
+          <Col span={7}>
+            <Input type="text" ref="judgeName" placeholder="姓名"/>
+          </Col>
+          <Col span={7} offset={1}>
+            <Input type="text" ref="judgePosition" placeholder="职位"/>
+          </Col>
+          <Col span={8} offset={1}>
+            <Input type="text" ref="judgeMobile" placeholder="联系方式"/>
+          </Col>
+        </FormItem>
+        <FormItem
+            {...formItemLayout}
+            label="书记员：">
+          <Col span={11}>
+            <Input type="text" ref="noteName" placeholder="姓名"/>
+          </Col>
+          <Col span={12} offset={1}>
+            <Input type="text" ref="noteMobile" placeholder="联系方式"/>
+          </Col>
         </FormItem>
         <FormItem
           {...formItemLayout}
           label="合议庭成员：">
-          <Input type="text" ref="judgeName"/>
-        </FormItem>
-        <FormItem
-          {...formItemLayout}
-          label="书记员：">
-          <Input type="text" ref="noteName"/>
-        </FormItem>
-        <FormItem
-          {...formItemLayout}
-          label="书记员联系方式：">
-          <Input type="text" ref="noteMobile"/>
+          <Input type="text" ref="collegiateName"/>
         </FormItem>
         <FormItem wrapperCol={{ span: 16, offset: 6 }} style={{ marginTop: 24 }}>
           <Button type="primary" htmlType="submit">确定</Button>
