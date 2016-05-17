@@ -1,6 +1,16 @@
 import React from 'react';
-import { Row, Col, Modal, Button, Form, Input } from 'antd';
+import { Row, Col, Modal, Button, Form, Input, Menu, Dropdown, Icon } from 'antd';
 const FormItem = Form.Item;
+const infoMenu = (
+  <Menu>
+    <Menu.Item key="0">
+      <a href="#">修改个人信息</a>
+    </Menu.Item>
+    <Menu.Item key="1">
+      <a href="#">退出登录</a>
+    </Menu.Item>
+  </Menu>
+);
 
 const Header = React.createClass ({
   getInitialState() {
@@ -30,20 +40,17 @@ const Header = React.createClass ({
     });
   },
   handleLoginOk() {
-    console.log(this.refs.loginUsername.value+" "+this.refs.loginPassword.value);
+    console.log(this.refs.loginUsername+" "+this.refs.loginPassword);
   },
   handleRegisterOk() {
-    console.log(this.refs.registerUsername.value+" "+this.refs.registerPassword.value);
+    console.log(this.refs.registerUsername+" "+this.refs.registerPassword);
   },
-
-  render() {
-    return(
-    <div style={{background:"#333",height:'50px'}}>
-      <Row>
-        <Col span={6} offset={1}><span style={{fontSize: '20px',lineHeight:'50px'}}>法务平台</span></Col>
-        <Col span={2} offset={13}>
-          <Button style={{marginTop:'10px'}} type="ghost" onClick={this.showLoginModal}>登录</Button>
-
+  getInfoNav(){
+    if(!this.props.user){
+      return(
+        <Col span={4} offset={13}>
+          <Button style={{marginTop:10}} type="ghost" onClick={this.showLoginModal}>登录</Button>
+          <Button style={{marginTop:10,marginLeft:10}} type="ghost" onClick={this.showRegisterModal}>注册</Button>
           <Modal title="登录" visible={this.state.loginVisible}
                  onOk={this.handleLoginOk} onCancel={this.handleLoginCancel}>
             <Form horizontal>
@@ -56,16 +63,13 @@ const Header = React.createClass ({
               </FormItem>
               <FormItem
                 id="control-input"
-                label="用户名："
+                label="密码："
                 labelCol={{ span: 6 }}
                 wrapperCol={{ span: 14 }}>
                 <Input type="password" ref="loginPassword" placeholder="请输入密码" />
               </FormItem>
             </Form>
           </Modal>
-        </Col>
-        <Col span={2}>
-          <Button style={{marginTop:'10px'}} type="ghost" onClick={this.showRegisterModal}>注册</Button>
           <Modal title="注册" visible={this.state.registerVisible}
                  onOk={this.handleRegisterOk} onCancel={this.handleRegisterCancel}>
             <Form horizontal>
@@ -78,7 +82,7 @@ const Header = React.createClass ({
               </FormItem>
               <FormItem
                 id="control-input"
-                label="用户名："
+                label="密码："
                 labelCol={{ span: 6 }}
                 wrapperCol={{ span: 14 }}>
                 <Input type="password" ref="registerPassword" placeholder="请输入密码" />
@@ -86,6 +90,27 @@ const Header = React.createClass ({
             </Form>
           </Modal>
         </Col>
+      );
+    }
+    else{
+      return(
+        <Col span={4} offset={13}>
+          <Dropdown overlay={infoMenu} trigger={['click']}>
+            <a style={{lineHeight:50}} className="ant-dropdown-link" href="#">
+              {this.props.user}<Icon type="down" />
+            </a>
+          </Dropdown>
+        </Col>
+      );
+    }
+  },
+  render() {
+    return(
+    <div style={{background:"#333",height:50}}>
+      <Row>
+        <Col span={6}><span style={{fontSize:20,lineHeight:50}}>法务平台</span></Col>
+        {this.getInfoNav()}
+
       </Row>
     </div>
     );
