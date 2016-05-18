@@ -119,7 +119,7 @@ const Header = React.createClass ({
         <Col span={4} offset={14}>
           <Dropdown overlay={infoMenu} trigger={['click']}>
             <a style={{lineHeight:'50px'}} className="ant-dropdown-link" href="#">
-              {this.props.user.name+'/'+role}<Icon type="down" />
+              {this.props.user.name+'('+role+')'}<Icon type="down" />
             </a>
           </Dropdown>
         </Col>

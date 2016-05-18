@@ -2,18 +2,27 @@ import '../common/lib';
 import React from 'react';
 import { Col, Form, Cascader, Input, Button } from 'antd';
 const FormItem = Form.Item;
-const InputGroup = Input.Group;
 import chinaSelect from '../common/chinaSelect';
 
-const FormCourt = React.createClass({
+let FormCourt = React.createClass({
+  submit() {
+    console.log(this.refs.courtName);
+    this.props.form.validateFields(function(errors, values){
+      if (!!errors) {
+        console.log('Errors in form!!!');
+        return;
+      }
+      console.log("submit:"+values);
+    });
+    this.props.onSubmit();
+  },
   render() {
     const formItemLayout = {
       labelCol: {span: 6},
       wrapperCol: {span: 16}
     };
-    console.log(this.props.form);
     return (
-      <Form horizontal form={this.props.form} onSubmit={this.handleSubmit}>
+      <Form horizontal form={this.props.form}>
         <FormItem
           {...formItemLayout}
           label="审理法院：">
@@ -53,11 +62,11 @@ const FormCourt = React.createClass({
           <Input type="text" ref="collegiateName"/>
         </FormItem>
         <FormItem wrapperCol={{ span: 16, offset: 6 }} style={{ marginTop: 24 }}>
-          <Button type="primary" htmlType="submit">确定</Button>
+          <Button type="primary" htmlType="button" onClick={this.submit}>确定</Button>
         </FormItem>
       </Form>
     );
   }
 });
-
+FormCourt = Form.create()(FormCourt);
 export default FormCourt;
