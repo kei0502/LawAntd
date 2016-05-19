@@ -5,27 +5,16 @@ const SubMenu = Menu.SubMenu;
 const SiderCompany = React.createClass({
   getInitialState() {
     return {
-      current: 'sub_1'
+      current: 'menu1'
     };
-  },
-  handleClick(e) {
-    console.log('click ', e);
-    this.setState({
-      current: e.key
-    });
   },
   render() {
       return (
-        <Menu onClick={this.handleClick}
-              defaultOpenKeys={['sub1']}
-              selectedKeys={[this.state.current]}
+        <Menu selectedKeys={[this.state.current]}
               style={{width:'100%'}}
               mode="inline">
-          <SubMenu key="sub1" title="案件立项">
-            <Menu.Item key="sub_1"><a href="companyCase.html">案件管理</a></Menu.Item>
-            <Menu.Item key="sub_2"><a href="right.html">权限管理</a></Menu.Item>
-          </SubMenu>
-          <Menu.Item key="menu1">案件流程管理</Menu.Item>
+          <Menu.Item key="menu1"><a href="companyCase.html">案件立项</a></Menu.Item>
+          <Menu.Item key="menu2">案件流程管理</Menu.Item>
         </Menu>
       );
   }
