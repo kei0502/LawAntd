@@ -4,9 +4,8 @@
   "private": true,
   "entry": {
     "index": "./src/entry/index.jsx",
-    "companyCase": "./src/entry/companyCase.jsx",
     "indexCreditor": "./src/entry/indexCreditor.jsx",
-    "companyInfo": "./src/entry/companyInfo.jsx"
+    "companyInfo": "./src/entry/companyInfo.jsx",
     "companyCaseCreate": "./src/entry/companyCaseCreate.jsx",
     "companyCaseList": "./src/entry/companyCaseList.jsx"
   },

@@ -1,20 +1,25 @@
 import React from 'react';
 import { Menu, Icon } from 'antd';
 const SubMenu = Menu.SubMenu;
+const hrefs = {menu1: "/companyCaseCreate.html", menu2: "/companyCaseList.html"};
 
 const SiderCompany = React.createClass({
+  getDefaultProps() {
+    return {current: 'menu1'};
+  },
   getInitialState() {
     return {
-      current: 'menu1'
+      current: this.props.current
     };
+  },
+  handleClick(e) {
+    location.href = hrefs[e.key];
   },
   render() {
       return (
-        <Menu selectedKeys={[this.state.current]}
-              style={{width:'100%'}}
-              mode="inline">
-          <Menu.Item key="menu1"><a href="companyCase.html">案件立项</a></Menu.Item>
-          <Menu.Item key="menu2">案件流程管理</Menu.Item>
+        <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} style={{width:'100%'}} mode="vertical">
+          <Menu.Item key="menu1"><span><Icon type="plus"/><span>案件立项</span></span></Menu.Item>
+          <Menu.Item key="menu2"><span><Icon type="bars"/><span>案件流程管理</span></span></Menu.Item>
         </Menu>
       );
   }

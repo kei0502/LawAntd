@@ -5,6 +5,7 @@ import FormCourt from '../component/FormCourt';
 import FormCase from '../component/FormCase';
 import FormDebtor from '../component/FormDebtor';
 import FormLiquidation from '../component/FormLiquidation';
+import mock from '../mock';
 import { Row, Col, Breadcrumb, Card, Steps} from 'antd';
 const Step = Steps.Step;
 import ReactDOM from 'react-dom';
@@ -75,7 +76,7 @@ const CompanyCase = React.createClass({
         <div>
           <Header user={this.props.user}/>
           <Row>
-            <Col span={4}><SiderCompany /></Col>
+            <Col span={4}><SiderCompany current="menu1"/></Col>
             <Col span={20}>
               <Row style={{marginTop:'20px'}}>
                 <Col span={22} offset={1}>
@@ -93,5 +94,4 @@ const CompanyCase = React.createClass({
     );
   }
 });
-var userObj = {name: '管理员一', role: 2};
-ReactDOM.render(<CompanyCase user={userObj}/>, document.getElementById('react-content'));
+ReactDOM.render(<CompanyCase user={mock.creditor}/>, document.getElementById('react-content'));

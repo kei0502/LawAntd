@@ -444,5 +444,32 @@ module.exports = {
         voteStart: "2016-05-25 18:54",
         voteEnd: "2016-05-25 18:56"
     }],
-    creditor: {name: "张三", role: 1}
+    creditor: {name: "张三", role: 1},
+    persons: [{
+        label: '群体一',
+        value: '0-0',
+        key: '0-0',
+        children: [{
+            label: '张三',
+            value: '0-0-0',
+            key: '0-0-0'
+        }, {
+            label: '李四',
+            value: '0-0-1',
+            key: '0-0-1'
+        }]
+    }, {
+        label: '群体二',
+        value: '0-1',
+        key: '0-1',
+        children: [{
+            label: '王五',
+            value: '0-1-0',
+            key: '0-1-0'
+        }, {
+            label: '赵六',
+            value: '0-1-1',
+            key: '0-1-1'
+        }]
+    }],
 };
