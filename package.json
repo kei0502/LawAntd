@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "entry": {
+    "index": "./src/entry/index.jsx",
+    "companyCase": "./src/entry/companyCase.jsx",
+    "indexCreditor": "./src/entry/indexCreditor.jsx",
+    "companyInfo": "./src/entry/companyInfo.jsx"
     "companyCaseCreate": "./src/entry/companyCaseCreate.jsx",
     "companyCaseList": "./src/entry/companyCaseList.jsx"
   },
@@ -11,6 +15,7 @@
     "atool-build": "0.7.x",
     "babel-plugin-antd": "0.4.x",
     "es3ify-loader": "^0.2.0",
+    "moment": "^2.13.0",
     "react": "^15.0.2",
     "react-dom": "^15.0.2"
   },
@@ -26,9 +31,6 @@
     "eslint-plugin-react": "4.x",
     "pre-commit": "1.x"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "scripts": {
     "start": "dora -p 8001 --plugins \"webpack,hmr,proxy,livereload?enableJs=false\"",
     "lint": "eslint --ext .js,.jsx src",
