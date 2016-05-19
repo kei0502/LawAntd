@@ -48,7 +48,7 @@ const Header = React.createClass ({
   getInfoNav(){
     if(!this.props.user){
       return(
-        <Col span={4} offset={13}>
+        <Col span={4} style={{float:'right',marginRight:'3.472%',textAlign:'right'}}>
           <Button style={{marginTop:10}} type="ghost" onClick={this.showLoginModal}>登录</Button>
           <Button style={{marginTop:10,marginLeft:10}} type="ghost" onClick={this.showRegisterModal}>注册</Button>
           <Modal title="登录" visible={this.state.loginVisible}
@@ -116,7 +116,7 @@ const Header = React.createClass ({
         role='会计';
       }
       return(
-        <Col span={4} offset={14}>
+        <Col span={4} style={{float:'right',marginRight:'3.472%',textAlign:'right'}}>
           <Dropdown overlay={infoMenu} trigger={['click']}>
             <a style={{lineHeight:'50px'}} className="ant-dropdown-link" href="#">
               {this.props.user.name+'('+role+')'}<Icon type="down" />

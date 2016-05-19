@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "entry": {
-    "companyCase": "./src/entry/companyCase.jsx"
+    "companyCaseCreate": "./src/entry/companyCaseCreate.jsx",
+    "companyCaseList": "./src/entry/companyCaseList.jsx"
   },
   "dependencies": {
     "antd": "~1.0.0",

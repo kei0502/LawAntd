@@ -17,9 +17,7 @@ const CompanyCase = React.createClass({
       currentStep: 0
     };
   },
-
   goStep(i) {
-
     return (e)=> {
       e.preventDefault();
       this.setState({currentStep: i});
@@ -27,7 +25,7 @@ const CompanyCase = React.createClass({
   },
   handleSubmit() {
     let s = this.state.currentStep + 1;
-    if (s != caseSteps.length) {
+    if (s != 4) { //caseSteps.length
       this.setState({
         currentStep: s
       });
@@ -65,15 +63,14 @@ const CompanyCase = React.createClass({
   },
   render() {
     const caseSteps = [{
-      title: (<a href="#" onClick={this.goStep(0)}>法院信息</a>)
-    }, {
-      title: (<a href="#" onClick={this.goStep(1)}>债务人信息</a>)
-    }, {
-      title: (<a href="#" onClick={this.goStep(2)}>案件信息</a>)
-    }, {
-      title: (<a href="#" onClick={this.goStep(3)}>管理人信息</a>)
-    }].map((s, i) => <Step key={i} title={s.title}></Step>);
-
+          title: (<a href="#" onClick={this.goStep(0)}>法院信息</a>)
+        }, {
+          title: (<a href="#" onClick={this.goStep(1)}>债务人信息</a>)
+        }, {
+          title: (<a href="#" onClick={this.goStep(2)}>案件信息</a>)
+        }, {
+          title: (<a href="#" onClick={this.goStep(3)}>管理人信息</a>)
+        }].map((s, i) => <Step key={i} title={s.title}></Step>);
     return (
         <div>
           <Header user={this.props.user}/>
