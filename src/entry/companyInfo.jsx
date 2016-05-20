@@ -3,15 +3,12 @@ import ReactDOM from 'react-dom';
 import Header from '../component/Header';
 import {Row, Col, Form, Select, Collapse, Pagination} from 'antd';
 import SiderCreditor from '../component/SiderCreditor';
+import TableCompany from '../component/TableCompany';
 import StepsCompany from '../component/StepsCompany';
 import moment from 'moment';
 import mock from '../mock';
 const Option = Select.Option;
 const Panel = Collapse.Panel;
-const caseTypes = ["破产清算", "强制清算", "破产重整", "自行清算"];
-function judgeShow(judge) {
-    return judge.name + "（联系方式:" + judge.phone + "）";
-}
 function getCurrentStep(company) {
     const current = moment(), expire = moment(company.expire), voteStart = moment(company.voteStart), voteEnd = moment(company.voteEnd);
     if (current.isSameOrBefore(expire, 'day')) {
@@ -63,59 +60,9 @@ const CompanyInfo = React.createClass({
                             </Form>
                             <Collapse accordion>
                                 {sliced.map(company=>(<Panel key={company._id} header={company.name}>
-                                    <table border="0" style={{width:"100%",textAlign:"left",verticalAlign:"top"}}>
-                                        <tbody>
-                                        <tr>
-                                            <th width="15%">案件编码:</th>
-                                            <td width="35%">{company.cid}</td>
-                                            <th width="15%">案件类型:</th>
-                                            <td width="35%">{caseTypes[company.type - 1]}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>统一信用代码:</th>
-                                            <td>{company.code}</td>
-                                            <th>公司名称:</th>
-                                            <td>{company.name}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>法定代表人:</th>
-                                            <td>{company.representative}</td>
-                                            <th>财务负责人:</th>
-                                            <td>{company.cfo}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>公司地址:</th>
-                                            <td colSpan="3">{company.address}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>受理日期:</th>
-                                            <td>{company.create}</td>
-                                            <th>结算日期:</th>
-                                            <td>{company.settlement}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>审理法院:</th>
-                                            <td>{company.courtName}</td>
-                                            <th>主审法官:</th>
-                                            <td>{judgeShow(company.judge)}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>合议庭成员:</th>
-                                            <td>{company.collegiates.map((collegiate, i)=> {
-                                                return (<span key={"collegiate_"+i}>
-                                                    {judgeShow(collegiate)}<br/>
-                                                </span>);
-                                            })}</td>
-                                            <th>书记员:</th>
-                                            <td>{judgeShow(company.note)}</td>
-                                        </tr>
-                                        <tr>
-                                            <td colSpan="4">
-                                                <StepsCompany {...company}/>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                                    <TableCompany company={company}>
+                                        <StepsCompany {...company}/>
+                                    </TableCompany>
                                 </Panel>))}
                             </Collapse>
                             <Pagination onChange={this.handlePageChange} total={companies.length}/>

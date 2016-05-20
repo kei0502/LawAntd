@@ -1,6 +1,6 @@
 import React from 'react';
 import {Menu, Icon} from 'antd';
-const hrefs = {user_menu1: "/indexCreditor.html", user_menu2: "/companyInfo.html", user_menu3: "/apply.html"};
+const hrefs = {user_menu1: "/indexCreditor.html", user_menu2: "/companyInfo.html", user_menu3: "/claimApply.html"};
 const SiderCreditor = React.createClass({
     getDefaultProps() {
         return {current: 'user_menu1'};

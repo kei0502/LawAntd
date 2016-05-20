@@ -2,6 +2,19 @@
  * Created by gyz on 16/5/19.
  */
 module.exports = {
+    currencies: [{_id: "5731d29ea8dba6fc21a1cc05", code: "CNY", name: "人民币"},
+        {_id: "5731d29ea8dba6fc21a1cc06", code: "USD/CNY", name: "美元", rate: 6.5216},
+        {_id: "5731d29ea8dba6fc21a1cc07", code: "EUR/CNY", name: "欧元", rate: 7.3778},
+        {_id: "5731d29ea8dba6fc21a1cc08", code: "100JPY/CNY", name: "日元", rate: 5.9832},
+        {_id: "5731d29ea8dba6fc21a1cc09", code: "HKD/CNY", name: "港币", rate: 0.84013},
+        {_id: "5731d29ea8dba6fc21a1cc0a", code: "GBP/CNY", name: "英镑", rate: 9.4248},
+        {_id: "5731d29ea8dba6fc21a1cc0b", code: "AUD/CNY", name: "澳元", rate: 4.7667},
+        {_id: "5731d29ea8dba6fc21a1cc0c", code: "NZD/CNY", name: "新西兰元", rate: 4.4408},
+        {_id: "5731d29ea8dba6fc21a1cc0d", code: "SGD/CNY", name: "新加坡元", rate: 4.7572},
+        {_id: "5731d29ea8dba6fc21a1cc0e", code: "CHF/CNY", name: "瑞士法郎", rate: 6.6534},
+        {_id: "5731d29ea8dba6fc21a1cc0f", code: "CAD/CNY", name: "加元", rate: 5.0469},
+        {_id: "5731d29ea8dba6fc21a1cc10", code: "CNY/MYR", name: "林吉特", rate: 0.61461},
+        {_id: "5731d29ea8dba6fc21a1cc11", code: "CNY/RUB", name: "卢布", rate: 9.9293}],
     companies: [{
         _id: "12345678",
         cid: "12345678",
@@ -20,9 +33,30 @@ module.exports = {
             phone: "13888888888"
         }],
         note: {name: "王五", phone: "13888888888"},
-        expire: "2016-05-20",
-        voteStart: "2016-05-21 18:54",
-        voteEnd: "2016-05-21 18:56"
+        expire: "2016-05-28",
+        voteStart: "2016-05-29 18:54",
+        voteEnd: "2016-05-29 18:56",
+        claims: [{
+            _id: "111",
+            name: "中国移动",
+            representative: "赵六",
+            phone_representative: "1388888888",
+            phone: "13888888888",
+            fax: "13888888888",
+            address1: 110000,
+            address2: 110100,
+            address3: 110101,
+            address: "东川路800号",
+            reason: "商业借贷",
+            rule: false,
+            claim_type: 3,
+            currency: "5731d29ea8dba6fc21a1cc05",
+            principal: 10000,
+            claim_information: "无",
+            attachments: [],
+            display: "债权申请书1",
+            state: 1
+        }]
     }, {
         _id: "12345679",
         cid: "12345679",
