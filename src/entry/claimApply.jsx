@@ -6,8 +6,9 @@ import Header from '../component/Header';
 import SiderCreditor from '../component/SiderCreditor';
 import TableCompany from '../component/TableCompany';
 import StepsClaim from '../component/StepsClaim';
+import ModalPreClaim from '../component/ModalPreClaim';
 import ModalClaim from '../component/ModalClaim';
-import ModalVerify from '../component/ModalVerify'
+import ModalVerify from '../component/ModalVerify';
 import mock from '../mock';
 const Panel = Collapse.Panel;
 const MenuItem = Menu.Item;
@@ -18,15 +19,27 @@ const noop = (e)=> {
 };
 const ClaimApply = React.createClass({
     getInitialState(){
-        return {page: 1, modalVisible: false, interestEnd: moment().format("YYYY-MM-DD")};
+        return {
+            page: 1,
+            modalVisible: false,
+            interestEnd: moment().format("YYYY-MM-DD"),
+            verifyVisible: false,
+            preClaimVisible: false
+        };
     },
     handlePageChange(page){
         this.setState({page: page});
     },
     create(company){
         return ()=> {
-            this.setState({interestEnd: company.settlement, modalVisible: true, claim: undefined})
+            this.setState({interestEnd: company.settlement, preClaimVisible: true, claim: undefined})
         };
+    },
+    preClaimOk(){
+        this.setState({preClaimVisible: false, modalVisible: true});
+    },
+    preClaimCancel(){
+        this.setState({preClaimVisible: false});
     },
     view(claim){
         return e=> {
@@ -139,6 +152,8 @@ const ClaimApply = React.createClass({
                     </Row>
                 </Col>
             </Row>
+            <ModalPreClaim visible={this.state.preClaimVisible} handleOk={this.preClaimOk}
+                           handleCancel={this.preClaimCancel}/>
             <ModalClaim visible={this.state.modalVisible} interestEnd={this.state.interestEnd}
                         disabled={this.state.disabled} close={this.closeModal} claim={this.state.claim}/>
             <ModalVerify visible={this.state.verifyVisible} claim={this.state.claim} close={this.closeVerify}
