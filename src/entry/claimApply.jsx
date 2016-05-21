@@ -19,8 +19,20 @@ const ClaimApply = React.createClass({
     },
     create(company){
         return ()=> {
-            this.setState({interestEnd: company.expire, modalVisible: true})
+            this.setState({interestEnd: company.settlement, modalVisible: true, claim: undefined})
         };
+    },
+    view(claim){
+        return e=> {
+            e.preventDefault();
+            this.setState({interestEnd: claim.settlement, modalVisible: true, disabled: true, claim: claim});
+        }
+    },
+    edit(claim){
+        return e=> {
+            e.preventDefault();
+            this.setState({interestEnd: claim.settlement, modalVisible: true, disabled: false, claim: claim});
+        }
     },
     closeModal(){
         this.setState({modalVisible: false});
@@ -41,18 +53,26 @@ const ClaimApply = React.createClass({
                         return (<span>
                             <a href="/processv1.pdf" target="_blank">下载授权书</a>
                             <span className="ant-divider"/>
-                            <a href="#">查看</a>
+                            <a href="#" onClick={this.view(record)}>查看</a>
                             <span className="ant-divider"/>
-                            <a href="#">修改</a>
+                            <a href="#" onClick={this.edit(record)}>修改</a>
+                            <span className="ant-divider"/>
+                            <a href="/processv1.pdf" target="_blank">打印</a>
                         </span>);
                     case 2:
                         return (<span>
-                            <a href="#">查看</a>
+                            <a href="#" onClick={this.view(record)}>查看</a>
                             <span className="ant-divider"/>
-                            <a href="#">修改</a>
+                            <a href="#" onClick={this.edit(record)}>修改</a>
+                            <span className="ant-divider"/>
+                            <a href="/processv1.pdf" target="_blank">打印</a>
                         </span>);
                     case 3:
-                        return (<span><a href="#">查看</a></span>);
+                        return (<span>
+                            <a href="#" onClick={this.view(record)}>查看</a>
+                            <span className="ant-divider"/>
+                            <a href="/processv1.pdf" target="_blank">打印</a>
+                        </span>);
                 }
             }
         }];
@@ -69,7 +89,7 @@ const ClaimApply = React.createClass({
                                         <TableCompany company={company}>
                                             <Button type="primary" onClick={this.create(company)}>新增债权申请</Button>
                                             <Table pagination={false} columns={columns}
-                                                   dataSource={company.claims?company.claims.map(claim=>({...claim,key:claim._id})):undefined}/>
+                                                   dataSource={company.claims?company.claims.map(claim=>({...claim,key:claim._id,settlement:company.settlement})):undefined}/>
                                         </TableCompany>
                                     </Panel>);
                                 })}
@@ -80,7 +100,7 @@ const ClaimApply = React.createClass({
                 </Col>
             </Row>
             <ModalClaim visible={this.state.modalVisible} interestEnd={this.state.interestEnd}
-                        editable={this.state.editable} close={this.closeModal}/>
+                        disabled={this.state.disabled} close={this.closeModal} claim={this.state.claim}/>
         </div>);
     }
 });
