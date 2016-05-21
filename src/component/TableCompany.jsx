@@ -1,11 +1,12 @@
 import React from 'react';
+require('../css/unstyledTable.css');
 const caseTypes = ["破产清算", "强制清算", "破产重整", "自行清算"];
 function judgeShow(judge) {
     return judge.name + "（联系方式:" + judge.phone + "）";
 }
 const TableCompany = React.createClass({
     render(){
-        return (<table border="0" style={{width:"100%",textAlign:"left",verticalAlign:"top"}}>
+        return (<table border="0">
             <tbody>
             <tr>
                 <th width="15%">案件编码:</th>

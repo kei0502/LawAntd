@@ -66,7 +66,7 @@ module.exports = {
             address: "东川路800号",
             reason: "商业借贷",
             file: "/processv1.pdf",
-            guaranree: {name: "人保财险", money: 12.3456, style: 2},
+            guarantee: {name: "人保财险", money: 12.3456, style: 2},
             judge: {money: 45.68676, file: "/processv1.pdf"},
             rule: false,
             claim_type: 1,
@@ -80,7 +80,7 @@ module.exports = {
             }],
             display: "债权申请书2",
             state: 2
-        },{
+        }, {
             _id: "113",
             name: "中国移动",
             representative: "赵六",
@@ -91,20 +91,146 @@ module.exports = {
             address: "东川路800号",
             reason: "商业借贷",
             file: "/processv1.pdf",
-            guaranree: {name: "人保财险", money: 12.3456, style: 2},
+            guarantee: {name: "人保财险", money: 12.3456, style: 2},
             judge: {money: 45.68676, file: "/processv1.pdf"},
             rule: false,
             claim_type: 1,
             currency: "5731d29ea8dba6fc21a1cc05",
             principal: 10000,
             interest: {calculate: 2, start: "2015-01-01"},
+            total: 11000,
             claim_information: "无",
             attachments: [{name: "processv1.pdf", file: "/processv1.pdf"}, {
                 name: "processv2.pdf",
                 file: "/processv1.pdf"
             }],
-            display: "债权申请书2",
-            state: 3
+            display: "债权申请书3",
+            state: 3,
+            verifyAccountant: "已审核",
+            verifyCourt: "已审核",
+            verifyCourtFile: "/processv1.pdf",
+            verifyCompany: "已审核",
+            verifyLiquidation: "已审核",
+            verifyLiquidationFile: "/processv1.pdf",
+            verifyTotal: 10500,
+            verifyGuarantee: 1,
+            verifyJudge: false,
+            verifyClaim_type: 1
+        }],
+        files: [{
+            _id: "201",
+            name: "指南",
+            time: "2016-01-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        }, {
+            _id: "202",
+            name: "政策",
+            time: "2016-01-02",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        }, {
+            _id: "203",
+            name: "债权生成条例",
+            time: "2016-01-02",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "204",
+            name: "债权申报办法",
+            time: "2016-01-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "205",
+            name: "文件上传指南",
+            time: "2015-01-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "206",
+            name: "文件上传指南2",
+            time: "2015-02-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "207",
+            name: "文件上传指南3",
+            time: "2015-03-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "208",
+            name: "债权申报办法2",
+            time: "2016-02-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "209",
+            name: "债权申报办法3",
+            time: "2016-03-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "210",
+            name: "请勿嗯好风口浪尖安师大",
+            time: "2016-01-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "211",
+            name: "安师大合家快乐",
+            time: "2016-01-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "212",
+            name: "讲噶合适的考虑",
+            time: "2016-01-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "213",
+            name: "哦去热河发财",
+            time: "2016-01-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "214",
+            name: "月球无法回答铃声快剪第三方",
+            time: "2016-01-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "215",
+            name: "求稳分段函数卡里",
+            time: "2016-01-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "216",
+            name: "轻微衣服的苏哈",
+            time: "2016-01-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "217",
+            name: "护额缺爱撒",
+            time: "2016-01-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "218",
+            name: "去完饿发大水好滴",
+            time: "2016-01-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
+        },{
+            _id: "219",
+            name: "哦小瀑布好是",
+            time: "2016-01-01",
+            href: "/companyCaseList.html",
+            attachments: [{name: "附件1", href: "/processv1.pdf"}, {name: "附件2", href: "/processv1.pdf"}]
         }]
     }, {
         _id: "12345679",
@@ -126,7 +252,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-21",
         voteStart: "2016-05-22 18:54",
-        voteEnd: "2016-05-22 18:56"
+        voteEnd: "2016-05-22 18:56",
+        files: []
     }, {
         _id: "12345680",
         cid: "12345680",
@@ -147,7 +274,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-22",
         voteStart: "2016-05-23 18:54",
-        voteEnd: "2016-05-23 18:56"
+        voteEnd: "2016-05-23 18:56",
+        files: []
     }, {
         _id: "12345681",
         cid: "12345681",
@@ -168,7 +296,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-23",
         voteStart: "2016-05-24 18:54",
-        voteEnd: "2016-05-24 18:56"
+        voteEnd: "2016-05-24 18:56",
+        files: []
     }, {
         _id: "12345682",
         cid: "12345682",
@@ -189,7 +318,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-24",
         voteStart: "2016-05-25 18:54",
-        voteEnd: "2016-05-25 18:56"
+        voteEnd: "2016-05-25 18:56",
+        files: []
     }, {
         _id: "12345683",
         cid: "12345683",
@@ -210,7 +340,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-17",
         voteStart: "2016-05-19 18:54",
-        voteEnd: "2016-05-25 18:56"
+        voteEnd: "2016-05-25 18:56",
+        files: []
     }, {
         _id: "12345684",
         cid: "12345684",
@@ -231,7 +362,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-17",
         voteStart: "2016-05-19 18:54",
-        voteEnd: "2016-05-25 18:56"
+        voteEnd: "2016-05-25 18:56",
+        files: []
     }, {
         _id: "12345685",
         cid: "12345685",
@@ -252,7 +384,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-17",
         voteStart: "2016-05-19 18:54",
-        voteEnd: "2016-05-25 18:56"
+        voteEnd: "2016-05-25 18:56",
+        files: []
     }, {
         _id: "12345686",
         cid: "12345686",
@@ -273,7 +406,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-17",
         voteStart: "2016-05-19 18:54",
-        voteEnd: "2016-05-25 18:56"
+        voteEnd: "2016-05-25 18:56",
+        files: []
     }, {
         _id: "12345687",
         cid: "12345687",
@@ -294,7 +428,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-17",
         voteStart: "2016-05-19 18:54",
-        voteEnd: "2016-05-25 18:56"
+        voteEnd: "2016-05-25 18:56",
+        files: []
     }, {
         _id: "12345688",
         cid: "12345688",
@@ -315,7 +450,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-17",
         voteStart: "2016-05-25 18:54",
-        voteEnd: "2016-05-30 18:56"
+        voteEnd: "2016-05-30 18:56",
+        files: []
     }, {
         _id: "12345689",
         cid: "12345689",
@@ -336,7 +472,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-17",
         voteStart: "2016-05-25 18:54",
-        voteEnd: "2016-05-30 18:56"
+        voteEnd: "2016-05-30 18:56",
+        files: []
     }, {
         _id: "12345690",
         cid: "12345690",
@@ -357,7 +494,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-17",
         voteStart: "2016-05-18 18:54",
-        voteEnd: "2016-05-18 18:56"
+        voteEnd: "2016-05-18 18:56",
+        files: []
     }, {
         _id: "12345691",
         cid: "12345691",
@@ -378,7 +516,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-17",
         voteStart: "2016-05-18 18:54",
-        voteEnd: "2016-05-18 18:56"
+        voteEnd: "2016-05-18 18:56",
+        files: []
     }, {
         _id: "12345692",
         cid: "12345692",
@@ -399,7 +538,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-17",
         voteStart: "2016-05-18 18:54",
-        voteEnd: "2016-05-18 18:56"
+        voteEnd: "2016-05-18 18:56",
+        files: []
     }, {
         _id: "12345693",
         cid: "12345693",
@@ -420,7 +560,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-24",
         voteStart: "2016-05-25 18:54",
-        voteEnd: "2016-05-25 18:56"
+        voteEnd: "2016-05-25 18:56",
+        files: []
     }, {
         _id: "12345694",
         cid: "12345694",
@@ -441,7 +582,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-24",
         voteStart: "2016-05-25 18:54",
-        voteEnd: "2016-05-25 18:56"
+        voteEnd: "2016-05-25 18:56",
+        files: []
     }, {
         _id: "12345695",
         cid: "12345695",
@@ -462,7 +604,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-24",
         voteStart: "2016-05-25 18:54",
-        voteEnd: "2016-05-25 18:56"
+        voteEnd: "2016-05-25 18:56",
+        files: []
     }, {
         _id: "12345696",
         cid: "12345696",
@@ -483,7 +626,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-24",
         voteStart: "2016-05-25 18:54",
-        voteEnd: "2016-05-25 18:56"
+        voteEnd: "2016-05-25 18:56",
+        files: []
     }, {
         _id: "12345697",
         cid: "12345697",
@@ -504,7 +648,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-24",
         voteStart: "2016-05-25 18:54",
-        voteEnd: "2016-05-25 18:56"
+        voteEnd: "2016-05-25 18:56",
+        files: []
     }, {
         _id: "12345698",
         cid: "12345698",
@@ -525,7 +670,8 @@ module.exports = {
         note: {name: "王五", phone: "13888888888"},
         expire: "2016-05-24",
         voteStart: "2016-05-25 18:54",
-        voteEnd: "2016-05-25 18:56"
+        voteEnd: "2016-05-25 18:56",
+        files: []
     }],
     creditor: {name: "张三", role: 1},
     persons: [{

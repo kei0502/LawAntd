@@ -7,6 +7,7 @@
     "indexCreditor": "./src/entry/indexCreditor.jsx",
     "companyInfo": "./src/entry/companyInfo.jsx",
     "claimApply":"./src/entry/claimApply.jsx",
+    "companyRelease":"./src/entry/companyRelease.jsx",
     "companyCaseCreate": "./src/entry/companyCaseCreate.jsx",
     "companyCaseList": "./src/entry/companyCaseList.jsx"
   },

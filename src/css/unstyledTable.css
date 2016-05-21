@@ -1,0 +1,10 @@
+table {
+    vertical-align: top;
+    text-align: left;
+    width: 100%
+}
+
+thead, tbody, tr, th, td {
+    vertical-align: inherit;
+    text-align: inherit;
+}
