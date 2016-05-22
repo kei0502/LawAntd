@@ -24,25 +24,19 @@ const CompanyRelease = React.createClass({
             title: "文件名",
             dataIndex: "name",
             key: "name",
-            width: "20%",
+            width: "30%",
             sorter: (a, b)=>(a.name.length - b.name.length)
         }, {
             title: "披露日期",
             dataIndex: "time",
             key: "time",
-            width: "20%",
+            width: "30%",
             sorter: (a, b)=>(a.time === b.time ? 0 : (a.time < b.time ? -1 : 1))
-        }, {
-            title: "链接",
-            dataIndex: "href",
-            key: "href",
-            width: "40%",
-            render: text=>(<a href={text} target="_blank">{text}</a>)
         }, {
             title: "附件列表",
             dataIndex: "attachments",
             key: "attachments",
-            width: "20%",
+            width: "40%",
             render: attachments=>(<ul>{attachments.map((attachment, i)=>(<li key={i}>
                 <a href={attachment.href} target="_blank">{attachment.name}</a>
             </li>))}</ul>)

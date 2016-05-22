@@ -248,7 +248,8 @@ module.exports = {
             questionTime: "2015-12-31 15:00",
             answer: "就这样",
             answerTime: "2016-01-01 17:00"
-        }]
+        }],
+        vote: []
     }, {
         _id: "12345679",
         cid: "12345679",
@@ -271,7 +272,8 @@ module.exports = {
         voteStart: "2016-05-22 18:54",
         voteEnd: "2016-05-22 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: []
     }, {
         _id: "12345680",
         cid: "12345680",
@@ -294,7 +296,8 @@ module.exports = {
         voteStart: "2016-05-23 18:54",
         voteEnd: "2016-05-23 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: []
     }, {
         _id: "12345681",
         cid: "12345681",
@@ -317,7 +320,8 @@ module.exports = {
         voteStart: "2016-05-24 18:54",
         voteEnd: "2016-05-24 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: []
     }, {
         _id: "12345682",
         cid: "12345682",
@@ -340,7 +344,8 @@ module.exports = {
         voteStart: "2016-05-25 18:54",
         voteEnd: "2016-05-25 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: []
     }, {
         _id: "12345683",
         cid: "12345683",
@@ -363,7 +368,40 @@ module.exports = {
         voteStart: "2016-05-19 18:54",
         voteEnd: "2016-06-25 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: [{
+            _id: "401",
+            name: "决议1",
+            file: "/processv1.pdf",
+            agree: 11,
+            disagree: 2,
+            agreeMoney: 6500000,
+            disagreeMoney: 50000
+        }, {
+            _id: "402",
+            name: "决议2",
+            file: "/processv1.pdf",
+            agree: 10,
+            disagree: 3,
+            agreeMoney: 6000000,
+            disagreeMoney: 550000
+        }, {
+            _id: "403",
+            name: "决议3",
+            file: "/processv1.pdf",
+            disagree: 11,
+            agree: 2,
+            disagreeMoney: 6500000,
+            agreeMoney: 50000
+        }, {
+            _id: "404",
+            name: "决议4",
+            file: "/processv1.pdf",
+            disagree: 10,
+            agree: 3,
+            disagreeMoney: 600000,
+            agreeMoney: 550000
+        }]
     }, {
         _id: "12345684",
         cid: "12345684",
@@ -386,7 +424,8 @@ module.exports = {
         voteStart: "2016-05-19 18:54",
         voteEnd: "2016-06-25 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: []
     }, {
         _id: "12345685",
         cid: "12345685",
@@ -409,7 +448,8 @@ module.exports = {
         voteStart: "2016-05-19 18:54",
         voteEnd: "2016-06-25 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: []
     }, {
         _id: "12345686",
         cid: "12345686",
@@ -432,7 +472,8 @@ module.exports = {
         voteStart: "2016-05-19 18:54",
         voteEnd: "2016-06-25 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: []
     }, {
         _id: "12345687",
         cid: "12345687",
@@ -455,7 +496,8 @@ module.exports = {
         voteStart: "2016-05-19 18:54",
         voteEnd: "2016-06-25 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: []
     }, {
         _id: "12345688",
         cid: "12345688",
@@ -478,7 +520,24 @@ module.exports = {
         voteStart: "2016-06-25 18:54",
         voteEnd: "2016-06-30 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: [{
+            _id: "401",
+            name: "决议1",
+            file: "/processv1.pdf"
+        }, {
+            _id: "402",
+            name: "决议2",
+            file: "/processv1.pdf"
+        }, {
+            _id: "403",
+            name: "决议3",
+            file: "/processv1.pdf"
+        }, {
+            _id: "404",
+            name: "决议4",
+            file: "/processv1.pdf"
+        }]
     }, {
         _id: "12345689",
         cid: "12345689",
@@ -501,7 +560,8 @@ module.exports = {
         voteStart: "2016-06-25 18:54",
         voteEnd: "2016-06-30 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: []
     }, {
         _id: "12345690",
         cid: "12345690",
@@ -524,7 +584,40 @@ module.exports = {
         voteStart: "2016-05-18 18:54",
         voteEnd: "2016-05-18 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: [{
+            _id: "401",
+            name: "决议1",
+            file: "/processv1.pdf",
+            agree: 11,
+            disagree: 2,
+            agreeMoney: 6500000,
+            disagreeMoney: 50000
+        }, {
+            _id: "402",
+            name: "决议2",
+            file: "/processv1.pdf",
+            agree: 10,
+            disagree: 3,
+            agreeMoney: 6000000,
+            disagreeMoney: 550000
+        }, {
+            _id: "403",
+            name: "决议3",
+            file: "/processv1.pdf",
+            disagree: 11,
+            agree: 2,
+            disagreeMoney: 6500000,
+            agreeMoney: 50000
+        }, {
+            _id: "404",
+            name: "决议4",
+            file: "/processv1.pdf",
+            disagree: 10,
+            agree: 3,
+            disagreeMoney: 600000,
+            agreeMoney: 550000
+        }]
     }, {
         _id: "12345691",
         cid: "12345691",
@@ -547,7 +640,41 @@ module.exports = {
         voteStart: "2016-05-18 18:54",
         voteEnd: "2016-05-18 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: [{
+            _id: "401",
+            name: "决议1",
+            file: "/processv1.pdf",
+            agree: 11,
+            disagree: 2,
+            agreeMoney: 6500000,
+            disagreeMoney: 50000
+        }, {
+            _id: "402",
+            name: "决议2",
+            file: "/processv1.pdf",
+            agree: 10,
+            disagree: 3,
+            agreeMoney: 6000000,
+            disagreeMoney: 550000
+        }, {
+            _id: "403",
+            name: "决议3",
+            file: "/processv1.pdf",
+            disagree: 11,
+            agree: 2,
+            disagreeMoney: 6500000,
+            agreeMoney: 50000
+        }, {
+            _id: "404",
+            name: "决议4",
+            file: "/processv1.pdf",
+            disagree: 10,
+            agree: 3,
+            disagreeMoney: 600000,
+            agreeMoney: 550000
+        }],
+        spotFile: "/processv1.pdf",
     }, {
         _id: "12345692",
         cid: "12345692",
@@ -570,7 +697,42 @@ module.exports = {
         voteStart: "2016-05-18 18:54",
         voteEnd: "2016-05-18 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: [{
+            _id: "401",
+            name: "决议1",
+            file: "/processv1.pdf",
+            agree: 11,
+            disagree: 2,
+            agreeMoney: 6500000,
+            disagreeMoney: 50000
+        }, {
+            _id: "402",
+            name: "决议2",
+            file: "/processv1.pdf",
+            agree: 10,
+            disagree: 3,
+            agreeMoney: 6000000,
+            disagreeMoney: 550000
+        }, {
+            _id: "403",
+            name: "决议3",
+            file: "/processv1.pdf",
+            disagree: 11,
+            agree: 2,
+            disagreeMoney: 6500000,
+            agreeMoney: 50000
+        }, {
+            _id: "404",
+            name: "决议4",
+            file: "/processv1.pdf",
+            disagree: 10,
+            agree: 3,
+            disagreeMoney: 600000,
+            agreeMoney: 550000
+        }],
+        spotFile: "/processv1.pdf",
+        closed: true
     }, {
         _id: "12345693",
         cid: "12345693",
@@ -593,7 +755,8 @@ module.exports = {
         voteStart: "2016-05-25 18:54",
         voteEnd: "2016-05-25 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: []
     }, {
         _id: "12345694",
         cid: "12345694",
@@ -616,7 +779,8 @@ module.exports = {
         voteStart: "2016-05-25 18:54",
         voteEnd: "2016-05-25 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: []
     }, {
         _id: "12345695",
         cid: "12345695",
@@ -639,7 +803,8 @@ module.exports = {
         voteStart: "2016-05-25 18:54",
         voteEnd: "2016-05-25 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: []
     }, {
         _id: "12345696",
         cid: "12345696",
@@ -662,7 +827,8 @@ module.exports = {
         voteStart: "2016-05-25 18:54",
         voteEnd: "2016-05-25 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: []
     }, {
         _id: "12345697",
         cid: "12345697",
@@ -685,7 +851,8 @@ module.exports = {
         voteStart: "2016-05-25 18:54",
         voteEnd: "2016-05-25 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: []
     }, {
         _id: "12345698",
         cid: "12345698",
@@ -708,7 +875,8 @@ module.exports = {
         voteStart: "2016-05-25 18:54",
         voteEnd: "2016-05-25 18:56",
         files: [],
-        questions: []
+        questions: [],
+        vote: []
     }],
     creditor: {name: "张三", role: 1},
     persons: [{

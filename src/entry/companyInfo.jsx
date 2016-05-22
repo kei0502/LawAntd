@@ -17,8 +17,12 @@ function getCurrentStep(company) {
         return 2;
     } else if (current.isSameOrBefore(voteEnd)) {
         return 3;
-    } else {
+    } else if (!company.spotFile) {
         return 4;
+    } else if (!company.closed) {
+        return 5;
+    } else {
+        return 6;
     }
 }
 const CompanyInfo = React.createClass({
@@ -54,7 +58,9 @@ const CompanyInfo = React.createClass({
                                         <Option value={1}>债权申请中</Option>
                                         <Option value={2}>债权申请截止</Option>
                                         <Option value={3}>投票中</Option>
-                                        <Option value={4}>投票结束</Option>
+                                        <Option value={4}>现场投票结果统计中</Option>
+                                        <Option value={5}>完成投票</Option>
+                                        <Option value={6}>已关闭</Option>
                                     </Select>
                                 </Form.Item>
                             </Form>

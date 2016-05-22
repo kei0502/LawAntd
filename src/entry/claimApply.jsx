@@ -10,13 +10,10 @@ import ModalPreClaim from '../component/ModalPreClaim';
 import ModalClaim from '../component/ModalClaim';
 import ModalVerify from '../component/ModalVerify';
 import mock from '../mock';
+import noop from '../common/noop';
 const Panel = Collapse.Panel;
 const MenuItem = Menu.Item;
 const claimTypes = ["工资", "税金", "无担保债权", "有担保债权"];
-const noop = (e)=> {
-    e.preventDefault();
-    return false;
-};
 const ClaimApply = React.createClass({
     getInitialState(){
         return {
