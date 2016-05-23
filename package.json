@@ -10,6 +10,7 @@
     "creditorVote": "./src/entry/creditorVote.jsx",
     "creditorQuestion": "./src/entry/creditorQuestion.jsx",
     "creditorDispatch": "./src/entry/creditorDispatch.jsx",
+    "creditorDistribution": "./src/entry/creditorDistribution.jsx",
     "companyRelease": "./src/entry/companyRelease.jsx",
     "companyCaseCreate": "./src/entry/companyCaseCreate.jsx",
     "companyCaseList": "./src/entry/companyCaseList.jsx"

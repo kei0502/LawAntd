@@ -3,7 +3,7 @@ import {Form, Input, Radio, Tag, Button} from 'antd';
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
 const responseStyles = ["知悉", "同意", "反对"];
-const responseColors = ["blue", "green", "red"];
+const responseColors = [undefined, "green", "red"];
 const FormResponse = React.createClass({
     getInitialState(){
         return {style: 1, text: ""};
@@ -44,7 +44,7 @@ const FormResponse = React.createClass({
                     <Input type="textarea" value={this.state.text} onChange={this.handleTextChange}/>
                 </FormItem>
                 <FormItem wrapperCol={{span: 18, offset: 6}} style={{marginBottom:0}}>
-                    <Button type="primary" htmlType="submit">确定</Button>
+                    <Button type="primary" htmlType="submit" size="default">确定</Button>
                 </FormItem>
             </Form>);
         }
