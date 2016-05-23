@@ -31,7 +31,7 @@ const SiderCreditor = React.createClass({
                 <Menu.Item key="user_menu7"><span><Icon type="file-text"/><span>报告发文</span></span></Menu.Item>
                 <Menu.Item key="user_menu4"><span><Icon type="info-circle-o"/><span>信息披露</span></span></Menu.Item>
                 <Menu.Item key="user_menu5"><span><Icon type="team"/><span>债权人会议</span></span></Menu.Item>
-                <Menu.Item key="user_menu8"><span><Icon type="team"/><span>分配与清算</span></span></Menu.Item>
+                <Menu.Item key="user_menu8"><span><Icon type="bar-chart"/><span>分配与清算</span></span></Menu.Item>
                 <Menu.Item key="user_menu6"><span><Icon type="retweet"/><span>债权问答</span></span></Menu.Item>
             </Menu>
         );
