@@ -1,22 +1,13 @@
 import React from 'react';
-import {Row, Col, Modal, Button, Form, Input, Menu, Dropdown, Icon} from 'antd';
+import {Row, Col, Modal, Button, Form, Input, Menu, Dropdown, Icon, message} from 'antd';
 const FormItem = Form.Item;
-const infoMenu = (
-    <Menu>
-      <Menu.Item key="0">
-        <a href="#">修改个人信息</a>
-      </Menu.Item>
-      <Menu.Item key="1">
-        <a href="/">退出登录</a>
-      </Menu.Item>
-    </Menu>
-);
 
 const Header = React.createClass({
   getInitialState() {
     return {
       loginVisible: false,
-      registerVisible: false
+      registerVisible: false,
+      editVisible: false
     };
   },
   showLoginModal() {
@@ -29,6 +20,12 @@ const Header = React.createClass({
       registerVisible: true
     });
   },
+  showEditModal(e) {
+    e.preventDefault();
+    this.setState({
+      editVisible: true
+    });
+  },
   handleLoginCancel() {
     this.setState({
       loginVisible: false
@@ -39,6 +36,11 @@ const Header = React.createClass({
       registerVisible: false
     });
   },
+  handleEditCancel() {
+    this.setState({
+      editVisible: false
+    });
+  },
   handleLoginOk() {
     console.log(this.refs.loginUsername + " " + this.refs.loginPassword);
     location.href = "/indexCreditor.html";
@@ -46,6 +48,10 @@ const Header = React.createClass({
   handleRegisterOk() {
     console.log(this.refs.registerUsername + " " + this.refs.registerPassword);
     location.href = "/indexCreditor.html";
+  },
+  handleEditOk(){
+    this.setState({editVisible: false});
+    message.success("信息修改成功");
   },
   getValidateCode(e){
     e.preventDefault();
@@ -62,14 +68,12 @@ const Header = React.createClass({
                    onOk={this.handleLoginOk} onCancel={this.handleLoginCancel}>
               <Form horizontal>
                 <FormItem
-                    id="control-input"
                     label="手机号："
                     labelCol={{ span: 6 }}
                     wrapperCol={{ span: 14 }}>
                   <Input ref="loginUsername" placeholder="请输入手机号"/>
                 </FormItem>
                 <FormItem
-                    id="control-input"
                     label="密码："
                     labelCol={{ span: 6 }}
                     wrapperCol={{ span: 14 }}>
@@ -81,7 +85,6 @@ const Header = React.createClass({
                    onOk={this.handleRegisterOk} onCancel={this.handleRegisterCancel}>
               <Form horizontal>
                 <FormItem
-                    id="control-input"
                     label="手机号："
                     labelCol={{ span: 6 }}
                     wrapperCol={{ span: 14 }}>
@@ -90,28 +93,24 @@ const Header = React.createClass({
                   <Button onClick={this.getValidateCode}>获取验证码</Button>
                 </FormItem>
                 <FormItem
-                    id="control-input"
                     label="验证码："
                     labelCol={{ span: 6 }}
                     wrapperCol={{ span: 14 }}>
                   <Input ref="registerPassword" placeholder="请输入手机验证码"/>
                 </FormItem>
                 <FormItem
-                    id="control-input"
                     label="真实姓名："
                     labelCol={{ span: 6 }}
                     wrapperCol={{ span: 14 }}>
                   <Input ref="registerPassword" placeholder="请输入真实姓名"/>
                 </FormItem>
                 <FormItem
-                    id="control-input"
                     label="密码："
                     labelCol={{ span: 6 }}
                     wrapperCol={{ span: 14 }}>
                   <Input type="password" ref="registerPassword" placeholder="请输入密码"/>
                 </FormItem>
                 <FormItem
-                    id="control-input"
                     label="密码确认："
                     labelCol={{ span: 6 }}
                     wrapperCol={{ span: 14 }}>
@@ -123,6 +122,16 @@ const Header = React.createClass({
       );
     }
     else {
+      const infoMenu = (
+          <Menu>
+            <Menu.Item key="0">
+              <a href="#" onClick={this.showEditModal}>修改个人信息</a>
+            </Menu.Item>
+            <Menu.Item key="1">
+              <a href="/">退出登录</a>
+            </Menu.Item>
+          </Menu>
+      );
       var role;
       if (this.props.user.role == 1) {
         role = '债权人';
@@ -152,6 +161,23 @@ const Header = React.createClass({
                 {this.props.user.name + '(' + role + ')'}<Icon type="down"/>
               </a>
             </Dropdown>
+            <Modal title="修改个人信息" visible={this.state.editVisible}
+                   onOk={this.handleEditOk} onCancel={this.handleEditCancel}>
+              <Form horizontal>
+                  <FormItem
+                      label="密码："
+                      labelCol={{ span: 6 }}
+                      wrapperCol={{ span: 14 }}>
+                      <Input type="password" placeholder="请输入密码"/>
+                  </FormItem>
+                  <FormItem
+                      label="密码确认："
+                      labelCol={{ span: 6 }}
+                      wrapperCol={{ span: 14 }}>
+                      <Input type="password" placeholder="请再次输入密码"/>
+                  </FormItem>
+              </Form>
+            </Modal>
           </Col>
       );
     }
