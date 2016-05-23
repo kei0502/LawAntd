@@ -906,4 +906,36 @@ module.exports = {
             key: '0-1-1'
         }]
     }],
+    dispatches: [{_id: "501", name: "文件1", file: "/processv1.pdf", company: {_id: "111", name: "中国移动"}}, {
+        _id: "502",
+        name: "文件2",
+        file: "/processv1.pdf",
+        company: {_id: "112", name: "中国电信"},
+        response: {style: 1, text: "同意"}
+    }, {_id: "503", name: "文件3", file: "/processv1.pdf", company: {_id: "111", name: "中国移动"}}, {
+        _id: "504",
+        name: "文件4",
+        file: "/processv1.pdf",
+        company: {_id: "112", name: "中国电信"}
+    }, {_id: "505", name: "文件5", file: "/processv1.pdf", company: {_id: "111", name: "中国移动"}}, {
+        _id: "506",
+        name: "文件6",
+        file: "/processv1.pdf",
+        company: {_id: "112", name: "中国电信"}
+    }, {_id: "507", name: "文件7", file: "/processv1.pdf", company: {_id: "111", name: "中国移动"}}, {
+        _id: "508",
+        name: "文件8",
+        file: "/processv1.pdf",
+        company: {_id: "112", name: "中国电信"}
+    }, {_id: "509", name: "文件9", file: "/processv1.pdf", company: {_id: "111", name: "中国移动"}}, {
+        _id: "510",
+        name: "文件10",
+        file: "/processv1.pdf",
+        company: {_id: "112", name: "中国电信"}
+    }, {_id: "511", name: "文件11", file: "/processv1.pdf", company: {_id: "111", name: "中国移动"}}, {
+        _id: "512",
+        name: "文件12",
+        file: "/processv1.pdf",
+        company: {_id: "112", name: "中国电信"}
+    }, {_id: "513", name: "文件13", file: "/processv1.pdf", company: {_id: "111", name: "中国移动"}}]
 };
