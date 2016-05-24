@@ -40,6 +40,7 @@ let FormCourt = React.createClass({
     return isPDF;
   },
   add() { //添加合议庭成员
+
     this.setState({collegiateNumber:this.state.collegiateNumber+1});
   },
   remove(k) { //删除合议庭成员
@@ -205,8 +206,7 @@ let FormCourt = React.createClass({
                 {...getFieldProps('upload', {
                   valuePropName: 'fileList',
                   normalize: this.normFile
-                })}
-            >
+                })}>
               <Button type="ghost">
                 <Icon type="upload" /> 点击上传
               </Button>

@@ -7,7 +7,9 @@
     "indexCreditor": "./src/entry/indexCreditor.jsx",
     "companyInfo": "./src/entry/companyInfo.jsx",
     "companyCaseCreate": "./src/entry/companyCaseCreate.jsx",
-    "companyCaseList": "./src/entry/companyCaseList.jsx"
+    "companyCaseList": "./src/entry/companyCaseList.jsx",
+    "companyCaseDetail": "./src/entry/companyCaseDetail.jsx",
+    "companyCaseVerify": "./src/entry/companyCaseVerify.jsx"
   },
   "dependencies": {
     "antd": "~1.0.0",

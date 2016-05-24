@@ -49,12 +49,12 @@ let FormCase = React.createClass({
               labelCol={{span: 6}}
               wrapperCol={{span: 8}}
               label="案件编码：">
-            <Input type="text" disabled ref="caseCode" placeholder="通过审核后由平台提供"/>
+            <Input type="text" disabled placeholder="通过审核后由平台提供"/>
           </FormItem>
           <FormItem
               {...formItemLayout}
               label="案件类型：" required>
-            <RadioGroup defaultValue="b" ref="caseType">
+            <RadioGroup defaultValue="1">
               <Radio value="1">破产清算</Radio>
               <Radio value="2">强制清算</Radio>
               <Radio value="3">破产重整</Radio>

@@ -444,7 +444,7 @@ module.exports = {
         voteStart: "2016-05-25 18:54",
         voteEnd: "2016-05-25 18:56"
     }],
-    creditor: {name: "张三", role: 1},
+    creditor: {name: "张三", role: 2},
     persons: [{
         label: '群体一',
         value: '0-0',
@@ -472,4 +472,79 @@ module.exports = {
             key: '0-1-1'
         }]
     }],
+    voteResult:[{
+        id: 1,
+        name: '公示1',
+        yPerson: 5,
+        yMoney: 100,
+        nPerson: 1,
+        nMoney: 50,
+        result: 1
+    },{
+        id: 2,
+        name: '公示2',
+        yPerson: 5,
+        yMoney: 100,
+        nPerson: 10,
+        nMoney: 500,
+        result: 2
+    },{
+        id: 3,
+        name: '公示3',
+        yPerson: 5,
+        yMoney: 10,
+        nPerson: 15,
+        nMoney: 150,
+        result: 2
+    },{
+        id: 4,
+        name: '公示4',
+        yPerson: 15,
+        yMoney: 200,
+        nPerson: 10,
+        nMoney: 150,
+        result: 1
+    }],
+    forms:[{
+        id: 1,
+        creditor: '张三',
+        date: '2016-01-02',
+        status: 1
+    },{
+        id:2,
+        creditor: '张三',
+        date: '2016-01-03',
+        status: 2
+    },{
+        id:3,
+        creditor: '李四',
+        date: '2016-01-03',
+        status: 3
+    },{
+        id:4,
+        creditor: '王五',
+        date: '2016-01-04',
+        status:4
+    },{
+        id:5,
+        creditor: '赵六',
+        date: '2016-01-05',
+        status: 5
+    }],
+    qas:[{
+        id:1,
+        creditor: '张三',
+        question: '怎样创建债权申请表?',
+        date: '2016-01-02'
+    },{
+        id:2,
+        creditor: '李四',
+        question: '我要查看债权申请表?',
+        date: '2016-01-03'
+    },{
+        id:3,
+        creditor: '张三',
+        question: '为什么债权申请表还没审核?',
+        date: '2016-01-04'
+    }]
 };

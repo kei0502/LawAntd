@@ -137,10 +137,10 @@ let FormLiquidation = React.createClass({
           </FormItem>
           <Row>
             <Col span={16} offset={6} style={{marginTop:'-58px'}}>
-              <Table columns={columns} dataSource={this.state.members} size="middle"/>
+              <Table columns={columns} dataSource={this.state.members} pagination={false} size="middle"/>
             </Col>
           </Row>
-          <Row>
+          <Row style={{marginTop:'15px'}}>
             <Col span={16}>
               <FormItem
                   labelCol={{span: 9}}
