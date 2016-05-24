@@ -52,12 +52,13 @@ module.exports = {
             currency: "5731d29ea8dba6fc21a1cc05",
             principal: 10000,
             claim_information: "无",
-            attachments: [{name: "processv1.pdf", file: "/processv1.pdf"}],
+            attachments: [{name: "processv1.pdf", style: 2, file: "/processv1.pdf"}],
             display: "债权申请书1",
+            generatedFile: "/processv1.pdf",
             state: 1
         }, {
             _id: "112",
-            name: "中国移动",
+            name: "中国联通",
             representative: "赵六",
             phone_representative: "1388888888",
             phone: "13888888888",
@@ -74,15 +75,17 @@ module.exports = {
             principal: 10000,
             interest: {calculate: 2, start: "2015-01-01"},
             claim_information: "无",
-            attachments: [{name: "processv1.pdf", file: "/processv1.pdf"}, {
+            attachments: [{name: "processv1.pdf", style: 2, file: "/processv1.pdf"}, {
                 name: "processv2.pdf",
-                file: "/processv1.pdf"
+                file: "/processv1.pdf",
+                style: 3
             }],
             display: "债权申请书2",
+            generatedFile: "/processv1.pdf",
             state: 2
         }, {
             _id: "113",
-            name: "中国移动",
+            name: "中国电信",
             representative: "赵六",
             phone_representative: "1388888888",
             phone: "13888888888",
@@ -94,17 +97,19 @@ module.exports = {
             guarantee: {name: "人保财险", money: 12.3456, style: 2},
             judge: {money: 45.68676, file: "/processv1.pdf"},
             rule: false,
-            claim_type: 1,
+            claim_type: 2,
             currency: "5731d29ea8dba6fc21a1cc05",
             principal: 10000,
             interest: {calculate: 2, start: "2015-01-01"},
             total: 11000,
             claim_information: "无",
-            attachments: [{name: "processv1.pdf", file: "/processv1.pdf"}, {
+            attachments: [{name: "processv1.pdf", style: 1, file: "/processv1.pdf"}, {
                 name: "processv2.pdf",
-                file: "/processv1.pdf"
+                file: "/processv1.pdf",
+                style: 3
             }],
             display: "债权申请书3",
+            generatedFile: "/processv1.pdf",
             state: 3,
             verifyAccountant: "已审核",
             verifyCourt: "已审核",
@@ -695,12 +700,14 @@ module.exports = {
             interest: {calculate: 2, start: "2015-01-01"},
             total: 12000,
             claim_information: "无",
-            attachments: [{name: "processv1.pdf", file: "/processv1.pdf"}, {
+            attachments: [{name: "processv1.pdf", file: "/processv1.pdf", style: 3}, {
                 name: "processv2.pdf",
-                file: "/processv1.pdf"
+                file: "/processv1.pdf",
+                style: 1
             }],
             display: "债权申请书6",
             state: 3,
+            generatedFile: "/processv1.pdf",
             verifyAccountant: "已审核",
             verifyCourt: "已审核",
             verifyCourtFile: "/processv1.pdf",
@@ -738,6 +745,7 @@ module.exports = {
             }],
             display: "债权申请书7",
             state: 3,
+            generatedFile: "/processv1.pdf",
             verifyAccountant: "已审核",
             verifyCourt: "已审核",
             verifyCourtFile: "/processv1.pdf",
@@ -834,6 +842,7 @@ module.exports = {
             }],
             display: "债权申请书4",
             state: 3,
+            generatedFile: "/processv1.pdf",
             verifyAccountant: "已审核",
             verifyCourt: "已审核",
             verifyCourtFile: "/processv1.pdf",
@@ -871,6 +880,7 @@ module.exports = {
             }],
             display: "债权申请书5",
             state: 3,
+            generatedFile: "/processv1.pdf",
             verifyAccountant: "已审核",
             verifyCourt: "已审核",
             verifyCourtFile: "/processv1.pdf",
@@ -1029,6 +1039,7 @@ module.exports = {
         vote: []
     }],
     creditor: {name: "张三", role: 1},
+    accountant: {name: "李四", role: 7},
     persons: [{
         label: '群体一',
         value: '0-0',

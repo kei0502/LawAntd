@@ -18,7 +18,7 @@ const FormResponse = React.createClass({
         return {style: this.state.style, text: this.state.text};
     },
     render(){
-        const formItemLayout = {labelCol: {span: 6}, wrapperCol: {span: 18}};
+        const formItemLayout = {labelCol: {span: 4}, wrapperCol: {span: 20}};
         if (this.props.response) {
             let responseStyle = this.props.response.style - 1;
             return (<Form horizontal>
@@ -43,7 +43,7 @@ const FormResponse = React.createClass({
                 <FormItem {...formItemLayout} label="反馈意见：" style={{marginBottom:0}}>
                     <Input type="textarea" value={this.state.text} onChange={this.handleTextChange}/>
                 </FormItem>
-                <FormItem wrapperCol={{span: 18, offset: 6}} style={{marginBottom:0}}>
+                <FormItem wrapperCol={{span: 20, offset: 4}} style={{marginBottom:0}}>
                     <Button type="primary" htmlType="submit" size="default">确定</Button>
                 </FormItem>
             </Form>);
