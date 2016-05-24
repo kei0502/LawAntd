@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "entry": {
-    "index": "./src/entry/index.jsx",
+    "indexUser": "./src/entry/indexUser.jsx",
     "indexCreditor": "./src/entry/indexCreditor.jsx",
     "companyInfo": "./src/entry/companyInfo.jsx",
     "claimApply": "./src/entry/claimApply.jsx",

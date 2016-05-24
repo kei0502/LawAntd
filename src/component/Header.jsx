@@ -128,7 +128,7 @@ const Header = React.createClass({
               <a href="#" onClick={this.showEditModal}>修改个人信息</a>
             </Menu.Item>
             <Menu.Item key="1">
-              <a href="/">退出登录</a>
+              <a href="/indexUser.html">退出登录</a>
             </Menu.Item>
           </Menu>
       );
