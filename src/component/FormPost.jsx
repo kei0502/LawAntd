@@ -1,10 +1,16 @@
 import '../common/lib';
 import React from 'react';
-import { Form, Button, Radio, Icon, TreeSelect, Upload } from 'antd';
+import { Form, Button, Radio, Icon, TreeSelect, Upload, Select } from 'antd';
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
+import mock from '../mock';
 
 let FormPost = React.createClass({
+  getInitialState() {
+    return ({
+      persons: mock.persons
+    });
+  },
   handleUpload() {
 
   },
@@ -34,6 +40,32 @@ let FormPost = React.createClass({
       this.props.onSubmit();
     });
   },
+  handleSelectChange(value){
+    //get persons
+    this.props.form.setFieldsValue({"company":value});
+  },
+  showCompanySelect() {
+    if(this.props.companies){
+      let companies = this.props.companies;
+      const companyProps = this.props.form.getFieldProps('company', {
+        rules: [
+          {required: true, message: '请选择一家债务公司'}
+        ]
+      });
+      return(
+        <FormItem
+          labelCol={{span: 6}}
+          wrapperCol={{span: 8}}
+          label="债务公司：">
+          <Select {...companyProps} size="large" defaultValue="" onChange={this.handleSelectChange}>
+            <Option key="" value="">&nbsp;</Option>
+            {companies.map(company=>(
+            <Option key={company._id} value={company._id}>{company.name}</Option>))}
+          </Select>
+        </FormItem>
+      );
+    }
+  },
   render() {
     const formItemLayout = {
       labelCol: {span: 6},
@@ -47,13 +79,14 @@ let FormPost = React.createClass({
     });
 
     const treeProps = {
-      treeData: this.props.persons,
+      treeData: this.state.persons,
       multiple: true,
       treeCheckable: true,
       treeDefaultExpandAll: true
     };
     return (
         <Form horizontal form={this.props.form}>
+          {this.showCompanySelect()}
           <FormItem
               labelCol={{span: 6}}
               wrapperCol={{span: 8}}

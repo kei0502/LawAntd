@@ -34,7 +34,8 @@ const CompanyCaseDetail = React.createClass({
       activeKey: '1',
       forms: mock.forms,
       creditorTypeVisible: false,
-      qaReplyVisible: false,
+      distributionVisible: false,
+      qaReplyVisible: false
     });
   },
   showVoteResult() {
@@ -161,6 +162,8 @@ const CompanyCaseDetail = React.createClass({
           return (<Button type="ghost" onClick={()=>this.verify(record.id)}>填写审核</Button>);
         else if(record.status==4)
           return (<Button type="ghost" onClick={()=>this.showModalCreditorType(record.id)}>债权人定性</Button>);
+        else if(record.status==5)
+          return (<Button type="ghost" onClick={()=>this.showModalDistribution(record.id)}>分配清偿</Button>);
         else
           return (<Button type="ghost" onClick={()=>this.getFormDetail(record.id)}>查看申请</Button>);
       }
@@ -182,11 +185,22 @@ const CompanyCaseDetail = React.createClass({
   },
   handleQaReplySubmit(){
     //...
-    console.log(document.getElementById('replyTextArea').value);
+    console.log(this.refs.qa);
     this.setState({qaReplyVisible:false});
   },
   handleQaReplyCancel(){
     this.setState({qaReplyVisible:false});
+  },
+  showModalDistribution(id){
+    this.setState({distributionVisible: true});
+  },
+  handleDistributionSubmit(){
+    //...
+    console.log(this.refs.distributionInput);
+    this.setState({distributionVisible:false});
+  },
+  handleDistributionCancel(){
+    this.setState({distributionVisible:false});
   },
   onCreditorTypeChange(e){
     this.setState({creditorTypeValue: e.target.value});
@@ -349,6 +363,16 @@ const CompanyCaseDetail = React.createClass({
               </FormItem>
             </Form>
           </Modal>
+          <Modal title="分配清偿" visible={this.state.distributionVisible} onOk={this.handleDistributionSubmit} onCancel={this.handleDistributionCancel}>
+            <Form horizontal>
+              <FormItem
+                  labelCol={{ span: 6 }}
+                  wrapperCol={{ span: 16 }}
+                  label="分配金额：" required>
+                <Input type="number" ref="distributionInput" placeholder="输入分配金额"/>
+              </FormItem>
+            </Form>
+          </Modal>
           <Modal title="债权人问题回复" visible={this.state.qaReplyVisible} onOk={this.handleQaReplySubmit} onCancel={this.handleQaReplyCancel}>
             <Form horizontal>
               <FormItem
@@ -361,7 +385,7 @@ const CompanyCaseDetail = React.createClass({
                   label="回复："
                   labelCol={{ span: 6 }}
                   wrapperCol={{ span: 14 }}>
-                <Input type="textarea" id="replyTextArea" rows="3" />
+                <Input type="textarea" ref="replyTextArea" rows="3" />
               </FormItem>
             </Form>
           </Modal>

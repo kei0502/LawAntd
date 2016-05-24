@@ -1,6 +1,6 @@
 import '../common/lib';
 import React from 'react';
-import { Form, Button, Radio, Icon, Input, Upload } from 'antd';
+import { Form, Button, Radio, Icon, Input, Upload, Select } from 'antd';
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
 
@@ -34,6 +34,28 @@ let FormDisclosure = React.createClass({
       this.props.onSubmit();
     });
   },
+  showCompanySelect() {
+    if(this.props.companies){
+      let companies = this.props.companies;
+      const companyProps = this.props.form.getFieldProps('company', {
+        rules: [
+          {required: true, message: '请选择一家债务公司'}
+        ]
+      });
+      return(
+          <FormItem
+              labelCol={{span: 6}}
+              wrapperCol={{span: 8}}
+              label="债务公司：">
+            <Select {...companyProps} size="large" defaultValue="" onChange={this.handleSelectChange}>
+              <Option key="" value="">&nbsp;</Option>
+              {companies.map(company=>(
+              <Option key={company._id} value={company._id}>{company.name}</Option>))}
+            </Select>
+          </FormItem>
+      );
+    }
+  },
   render() {
     const formItemLayout = {
       labelCol: {span: 6},
@@ -48,6 +70,7 @@ let FormDisclosure = React.createClass({
 
     return (
         <Form horizontal form={this.props.form}>
+          {this.showCompanySelect()}
           <FormItem
               labelCol={{span: 6}}
               wrapperCol={{span: 16}}

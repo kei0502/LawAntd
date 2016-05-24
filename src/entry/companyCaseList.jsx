@@ -134,9 +134,6 @@ const CompanyCaseList = React.createClass({
         return status == filterState;
       });
     }
-    const pagination = {
-      total: cases.length
-    };
     const columns = [{
       title: '案件编码',
       dataIndex: 'cid',
@@ -219,7 +216,7 @@ const CompanyCaseList = React.createClass({
               </Row>
               <Row style={{marginTop:'10px'}}>
                 <Col span={22} offset={1}>
-                  <Table columns={columns} rowKey={record => record.code} dataSource={cases} pagination={pagination}/>
+                  <Table columns={columns} rowKey={record => record.code} dataSource={cases} pagination={{total:cases.length}}/>
                 </Col>
               </Row>
             </Col>
