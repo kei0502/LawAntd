@@ -20,7 +20,9 @@
     "companyCaseCreate": "./src/entry/companyCaseCreate.jsx",
     "companyCaseList": "./src/entry/companyCaseList.jsx",
     "companyCaseDetail": "./src/entry/companyCaseDetail.jsx",
-    "companyCaseVerify": "./src/entry/companyCaseVerify.jsx"
+    "companyCaseVerify": "./src/entry/companyCaseVerify.jsx",
+    "companyDispatch": "./src/entry/companyDispatch.jsx",
+    "companyDisclosure": "./src/entry/companyDisclosure.jsx"
   },
   "dependencies": {
     "antd": "~1.0.0",
