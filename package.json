@@ -6,6 +6,7 @@
     "index": "./src/entry/index.jsx",
     "news": "./src/entry/news.jsx",
     "newsPage": "./src/entry/newsPage.jsx",
+    "case": "./src/entry/case.jsx",
     "indexUser": "./src/entry/indexUser.jsx",
     "indexCreditor": "./src/entry/indexCreditor.jsx",
     "companyInfo": "./src/entry/companyInfo.jsx",
