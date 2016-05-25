@@ -1,4 +1,5 @@
 import React from 'react';
+import Common from '../common/lib';
 import {Row, Col, Modal, Button, Form, Input, Menu, Dropdown, Icon, message} from 'antd';
 const FormItem = Form.Item;
 
@@ -132,28 +133,7 @@ const Header = React.createClass({
             </Menu.Item>
           </Menu>
       );
-      var role;
-      if (this.props.user.role == 1) {
-        role = '债权人';
-      }
-      else if (this.props.user.role == 2) {
-        role = '管理人';
-      }
-      else if (this.props.user.role == 3) {
-        role = '工作人员';
-      }
-      else if (this.props.user.role == 4) {
-        role = '法院';
-      }
-      else if (this.props.user.role == 5) {
-        role = '平台管理员';
-      }
-      else if (this.props.user.role == 6) {
-        role = '公司';
-      }
-      else if (this.props.user.role == 7) {
-        role = '会计';
-      }
+      var role = Common.getUserRole(this.props.user.role);
       return (
           <Col span={4} style={{float:'right',marginRight:'3.472%',textAlign:'right'}}>
             <Dropdown overlay={infoMenu} trigger={['click']}>

@@ -1,37 +1,29 @@
-import '../common/lib';
 import SiderCompany from '../component/SiderCompany';
 import Header from '../component/Header';
 import FormDisclosure from '../component/FormDisclosure';
 import mock from '../mock';
 import moment from 'moment';
-import { Row, Col, Table, Tabs, Icon, Select } from 'antd';
+import { Row, Col, Tabs, Icon, Select } from 'antd';
 import ReactDOM from 'react-dom';
 import React from 'react';
+require('../css/style.css');
 
-const CompanyDispatch = React.createClass({
+const CompanyDisclosure = React.createClass({
   getInitialState(){
-    return {dispatches: this.props.dispatches, companySelect: ""};
+    return {companySelect: ""};
   },
   handleSelectChange(value){
     this.setState({companySelect: value});
   },
-  handleResponseSubmit(_id){
-    return (cb)=>((e)=> {
-      e.preventDefault();
-      var response = cb(), dispatches = this.state.dispatches.slice(0);
-      for (var i = 0; i < dispatches.length; i++) {
-        if (dispatches[i]._id === _id) {
-          dispatches[i].response = response;
-          break;
-        }
-      }
-      this.setState({dispatches: dispatches});
-    });
-  },
   render() {
     let companies = [], companyIndexes = [];
-
-
+    this.props.files.forEach(file=> {
+      const company = file.company, companyId = company._id;
+      if (companyIndexes.indexOf(companyId) < 0) {
+        companies.push(company);
+        companyIndexes.push(companyId);
+      }
+    });
     return (
         <div>
           <Header user={this.props.user}/>
@@ -47,7 +39,8 @@ const CompanyDispatch = React.createClass({
                           <span>公司筛选：</span>
                         </Col>
                         <Col span={4}>
-                          <Select style={{width: '100%'}} size="large" defaultValue="" onChange={this.handleSelectChange}>
+                          <Select style={{width: '100%'}} size="large" defaultValue=""
+                                  onChange={this.handleSelectChange}>
                             <Option key="" value="">&nbsp;</Option>
                             {companies.map(company=>(
                             <Option key={company._id} value={company._id}>{company.name}</Option>))}
@@ -56,21 +49,15 @@ const CompanyDispatch = React.createClass({
                       </Row>
                       <Row style={{marginTop:'15px'}}>
                         <ul className="news-list">
-                          <li><a href="#">公安部开通非法集资案件投资人信息登记平台首对“e租宝”案<span>2016-02-21</span></a></li>
-                          <li><a href="#">公安部开通非法集资案件投资人信息登记平台首对“e租宝”案<span>2016-02-22</span></a></li>
-                          <li><a href="#">公安部开通非法集资案件投资人信息登记平台首对“e租宝”案<span>2016-02-22</span></a></li>
-                          <li><a href="#">公安部开通非法集资案件投资人信息登记平台首对“e租宝”案<span>2016-02-21</span></a></li>
-                          <li><a href="#">公安部开通非法集资案件投资人信息登记平台首对“e租宝”案<span>2016-02-21</span></a></li>
-                          <li><a href="#">公安部开通非法集资案件投资人信息登记平台首对“e租宝”案<span>2016-02-21</span></a></li>
-                          <li><a href="#">公安部开通非法集资案件投资人信息登记平台首对“e租宝”案<span>2016-02-22</span></a></li>
-                          <li><a href="#">公安部开通非法集资案件投资人信息登记平台首对“e租宝”案<span>2016-02-22</span></a></li>
-                          <li><a href="#">公安部开通非法集资案件投资人信息登记平台首对“e租宝”案<span>2016-02-21</span></a></li>
-                          <li><a href="#">公安部开通非法集资案件投资人信息登记平台首对“e租宝”案<span>2016-02-21</span></a></li>
+                          {this.props.files.filter(x=>x.status==1&&(this.state.companySelect==""||this.state.companySelect==x.company._id))
+                              .map(file=>(
+                          <li key={file._id}><a href={file.file} target="_blank"><span style={{fontWeight:'bold'}}>[{file.company.name}]</span> {file.name}
+                            <span className="date">{file.date}</span></a></li>))}
                         </ul>
                       </Row>
                     </Tabs.TabPane>
                     <Tabs.TabPane tab={<span><Icon type="plus" />新建披露</span>} key="3">
-                      <FormDisclosure companies={companies}></FormDisclosure>
+                      <FormDisclosure companies={this.props.companies}></FormDisclosure>
                     </Tabs.TabPane>
                   </Tabs>
                 </Col>
@@ -82,4 +69,4 @@ const CompanyDispatch = React.createClass({
   }
 });
 
-ReactDOM.render(<CompanyDispatch user={mock.creditor} dispatches={mock.dispatches}/>, document.getElementById('react-content'));
+ReactDOM.render(<CompanyDisclosure user={mock.creditor} files={mock.files}/>, document.getElementById('react-content'));

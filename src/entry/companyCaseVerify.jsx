@@ -1,4 +1,3 @@
-import '../common/lib';
 import SiderCompany from '../component/SiderCompany';
 import Header from '../component/Header';
 import FormVerify from '../component/FormVerify';

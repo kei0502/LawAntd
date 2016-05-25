@@ -19,7 +19,12 @@
     "companyCaseDetail": "./src/entry/companyCaseDetail.jsx",
     "companyCaseVerify": "./src/entry/companyCaseVerify.jsx",
     "companyDispatch": "./src/entry/companyDispatch.jsx",
-    "companyDisclosure": "./src/entry/companyDisclosure.jsx"
+    "companyDisclosure": "./src/entry/companyDisclosure.jsx",
+    "companyContract": "./src/entry/companyContract.jsx",
+    "platformUser": "./src/entry/platformUser.jsx",
+    "platformCase": "./src/entry/platformCase.jsx",
+    "platformFile": "./src/entry/platformFile.jsx",
+    "platformAdvert": "./src/entry/platformAdvert.jsx"
   },
   "dependencies": {
     "antd": "~1.0.0",

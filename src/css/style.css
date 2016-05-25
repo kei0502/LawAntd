@@ -36,7 +36,7 @@
     float: left;
     color: #333;
 }
-.news-list li a span {
+.news-list li .date {
     float: right;
 }
 #noticeArea {
