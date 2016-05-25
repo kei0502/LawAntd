@@ -144,4 +144,4 @@ const PlatformFile = React.createClass({
   }
 });
 
-ReactDOM.render(<PlatformFile user={mock.platform} files={mock.files}/>, document.getElementById('react-content'));
+ReactDOM.render(<PlatformFile user={mock.platform} files={mock.disclosureFiles}/>, document.getElementById('react-content'));
