@@ -97,13 +97,13 @@ const Header = React.createClass({
                     label="验证码："
                     labelCol={{ span: 6 }}
                     wrapperCol={{ span: 14 }}>
-                  <Input ref="registerPassword" placeholder="请输入手机验证码"/>
+                  <Input ref="registerValidateCode" placeholder="请输入手机验证码"/>
                 </FormItem>
                 <FormItem
                     label="真实姓名："
                     labelCol={{ span: 6 }}
                     wrapperCol={{ span: 14 }}>
-                  <Input ref="registerPassword" placeholder="请输入真实姓名"/>
+                  <Input ref="registerName" placeholder="请输入真实姓名"/>
                 </FormItem>
                 <FormItem
                     label="密码："
@@ -115,7 +115,7 @@ const Header = React.createClass({
                     label="密码确认："
                     labelCol={{ span: 6 }}
                     wrapperCol={{ span: 14 }}>
-                  <Input type="password" ref="registerPassword" placeholder="请再次输入密码"/>
+                  <Input type="password" ref="registerRepeat" placeholder="请再次输入密码"/>
                 </FormItem>
               </Form>
             </Modal>

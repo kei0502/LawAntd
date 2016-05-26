@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import {Row, Col, Table, Select, Form} from 'antd';
 import moment from 'moment';
 import Header from '../component/web/Header';
-import Nav from '../component/web/Nav';
 import Footer from '../component/web/Footer';
 import mock from '../mock';
 function getCurrentStep(company) {
@@ -52,8 +51,7 @@ const Case = React.createClass({
             }
         }];
         return (<div>
-            <Header/>
-            <Nav current="case"/>
+            <Header current="case" user={mock.creditor}/>
             <Row><Col span={16} offset={4}>
                 <Form horizontal style={{margin: "1em 0"}}>
                     <Form.Item label="案件类型：" labelCol={{span:18}} wrapperCol={{span: 6}}>

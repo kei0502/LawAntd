@@ -17,7 +17,7 @@ const Post = React.createClass({
                     rendered.push(<img src={img.src} alt={img.src} key={'img_'+index+'_'+i} width="100%"/>);
                 });
             }
-            rendered.push(<p className="post-content">{content}</p>);
+            rendered.push(<p className="post-content" key={"p_"+index}>{content}</p>);
         });
         if (indexedImg[text.length]) {
             indexedImg[text.length].forEach((img, i)=> {
@@ -26,7 +26,7 @@ const Post = React.createClass({
         }
         return (<div className="post">
             <h1 className="post-title">{title}</h1>
-            <p className="post-date">发布日期：{date}</p>
+            {this.props.showDate ? (<p className="post-date">发布日期：{date}</p>) : null}
             {rendered}
         </div>);
     }
