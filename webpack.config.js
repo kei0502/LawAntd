@@ -8,6 +8,5 @@ module.exports = function (webpackConfig) {
     test: /\.jsx?$/,
     loader: 'es3ify-loader',
   });
-
   return webpackConfig;
 };

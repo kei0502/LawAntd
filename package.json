@@ -28,7 +28,8 @@
     "platformUser": "./src/entry/platformUser.jsx",
     "platformCase": "./src/entry/platformCase.jsx",
     "platformFile": "./src/entry/platformFile.jsx",
-    "platformAdvert": "./src/entry/platformAdvert.jsx"
+    "platformAdvert": "./src/entry/platformAdvert.jsx",
+    "platformNews": "./src/entry/platformNews.jsx"
   },
   "dependencies": {
     "antd": "~1.0.0",
@@ -36,8 +37,10 @@
     "babel-plugin-antd": "0.4.x",
     "es3ify-loader": "^0.2.0",
     "moment": "^2.13.0",
+    "quill": "^0.20.1",
     "react": "^15.0.2",
-    "react-dom": "^15.0.2"
+    "react-dom": "^15.0.2",
+    "react-quill": "^0.4.1"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.0",

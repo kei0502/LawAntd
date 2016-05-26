@@ -69,4 +69,4 @@ const CompanyDisclosure = React.createClass({
   }
 });
 
-ReactDOM.render(<CompanyDisclosure user={mock.creditor} files={mock.files}/>, document.getElementById('react-content'));
+ReactDOM.render(<CompanyDisclosure user={mock.creditor} files={mock.disclosureFiles}/>, document.getElementById('react-content'));
