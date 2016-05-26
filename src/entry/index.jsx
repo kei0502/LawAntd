@@ -2,14 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Row, Col, Carousel, Icon} from 'antd';
 import Header from '../component/web/Header';
-import Nav from '../component/web/Nav';
 import Footer from '../component/web/Footer'
 import mock from '../mock'
 const Index = React.createClass({
     render(){
         return (<div>
-            <Header/>
-            <Nav/>
+            <Header />
             <Row><Col span={16} offset={4}>
                 <Carousel autoplay>
                     {mock.homepage_ad.map((ad, i)=>(

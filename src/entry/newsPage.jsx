@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Row, Col} from 'antd';
 import Header from '../component/web/Header';
-import Nav from '../component/web/Nav';
 import Footer from '../component/web/Footer';
 import Post from '../component/web/Post';
 import getQueryParams from '../common/getQueryParams';
@@ -10,10 +9,9 @@ import mock from '../mock';
 const NewsPage = React.createClass({
     render(){
         return (<div>
-            <Header/>
-            <Nav current="news"/>
+            <Header current="news"/>
             <Row><Col span={16} offset={4}>
-                <Post post={this.props.news}/>
+                <Post post={this.props.news} showDate/>
             </Col></Row>
             <Footer/>
         </div>);
