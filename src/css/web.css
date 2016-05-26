@@ -62,11 +62,5 @@ div.post {
   width: 100%; }
 .ant-search-input .ant-search-btn {
   margin-left: 0; }
-  .ant-search-input .ant-search-btn:hover {
-    border-color: #d9d9d9; }
-.ant-search-input-focus .ant-search-btn-noempty, .ant-search-input:hover .ant-search-btn-noempty {
-  color: #fff;
-  background-color: #2db7f5;
-  border-color: #2db7f5; }
 
 /*# sourceMappingURL=web.css.map */
