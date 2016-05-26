@@ -102,7 +102,7 @@ const CompanyDispatch = React.createClass({
                              dataSource={dispatchesReceive} rowKey={record => record._id}/>
                       </Row>
                     </Tabs.TabPane>
-                    <Tabs.TabPane tab={<span><Icon type="export" />收件箱</span>} key="2">
+                    <Tabs.TabPane tab={<span><Icon type="export" />发件箱</span>} key="2">
                       <Row>
                         <Col span={20} style={{textAlign:'right',marginTop:'8px'}}>
                           <span>公司筛选：</span>

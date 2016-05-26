@@ -5,6 +5,7 @@ const hrefs = {
   menu2: "/platformCase.html",
   menu3: "/platformFile.html",
   menu4: "/platformAdvert.html",
+  menu5: "/platformNews.html"
 };
 
 const SiderPlatform = React.createClass({
@@ -26,6 +27,7 @@ const SiderPlatform = React.createClass({
           <Menu.Item key="menu2"><span><Icon type="bars"/><span>案件管理</span></span></Menu.Item>
           <Menu.Item key="menu3"><span><Icon type="copy"/><span>文件管理</span></span></Menu.Item>
           <Menu.Item key="menu4"><span><Icon type="solution"/><span>广告管理</span></span></Menu.Item>
+          <Menu.Item key="menu5"><span><Icon type="ellipsis"/><span>网站发布</span></span></Menu.Item>
         </Menu>
     );
   }
