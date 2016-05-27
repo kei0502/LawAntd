@@ -15,7 +15,7 @@ const PlatformNews = React.createClass({
   showModalDeleteNews(id){
     let that=this;
     Modal.confirm({
-      title: '是否确认要删除该用户?',
+      title: '是否确认要删除该新闻?',
       onOk() {
         let news=that.state.news;
         for(let i=0,len=news.length;i<len;i++){
@@ -30,9 +30,7 @@ const PlatformNews = React.createClass({
     });
   },
   onSubmit(){
-    Modal.info({
-      content: this.refs.editor.state.value
-    });
+    console.log(this.refs.editor.state.value);
   },
   render() {
     const columns = [{
