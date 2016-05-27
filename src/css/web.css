@@ -7,13 +7,14 @@ ul.post {
   ul.post li {
     padding: 0.5em 0;
     border-bottom: 1px #ccc dashed; }
+    ul.post li:first-of-type {
+      padding-top: 0; }
     ul.post li:last-of-type {
       border-bottom: none; }
     ul.post li a.post-title {
       text-decoration: none;
       color: #205caa;
-      font-size: 1.25em;
-      display: block; }
+      font-size: 1.25em; }
     ul.post li .post-date {
       font-size: 0.75em;
       color: #818181; }
@@ -49,5 +50,17 @@ div.post {
     .ant-menu-vertical.menu-left .ant-menu-item.ant-menu-item-selected {
       background-color: #2db7f5;
       color: white; }
+
+.ant-search-input-wrapper {
+  display: inline-block;
+  vertical-align: middle; }
+
+.ant-search-input.ant-input-group .ant-input:first-child, .ant-search-input.ant-input-group .ant-select:first-child {
+  border-radius: 6px;
+  position: absolute;
+  top: -1px;
+  width: 100%; }
+.ant-search-input .ant-search-btn {
+  margin-left: 0; }
 
 /*# sourceMappingURL=web.css.map */

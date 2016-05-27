@@ -1,5 +1,6 @@
 import React from 'react';
-import {Pagination} from 'antd';
+import {Pagination, Form} from 'antd';
+import SearchInput from './SearchInput';
 require('../../css/web.css');
 const PostList = React.createClass({
     getInitialState(){
@@ -8,9 +9,13 @@ const PostList = React.createClass({
     handlePageChange(page){
         this.setState({page: page});
     },
+    handleSearch(text){
+        this.setState({search: text});
+    },
     render(){
-        const posts = this.props.posts, page = this.state.page, sliced = posts.length <= page * 10 ? posts.slice((page - 1) * 10) : posts.slice((page - 1) * 10, page * 10);
-        return (<div style={{marginBottom:"1em"}}>
+        const posts = this.state.search ? this.props.posts.filter(post=>(post.title.toLowerCase().indexOf(this.state.search.toLowerCase()) >= 0)) : this.props.posts, page = this.state.page, sliced = posts.length <= page * 10 ? posts.slice((page - 1) * 10) : posts.slice((page - 1) * 10, page * 10);
+        return (<div style={{marginTop:"1em"}}>
+            <SearchInput style={{width:"30%", float:"right"}} onSearch={this.handleSearch}/>
             <ul className="post">
                 {sliced.map(post=>(<li key={post._id}>
                     <a className="post-title" href={post.href}>{post.title}</a>
