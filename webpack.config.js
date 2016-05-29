@@ -7,6 +7,7 @@ module.exports = function (webpackConfig) {
   webpackConfig.module.loaders.unshift({
     test: /\.jsx?$/,
     loader: 'es3ify-loader',
+    noParse: /node_modules\/quill/
   });
   return webpackConfig;
 };
