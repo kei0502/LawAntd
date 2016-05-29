@@ -33,7 +33,7 @@ module.exports = {
       phone: "13888888888"
     }],
     note: {name: "王五", phone: "13888888888"},
-    expire: "2016-05-28",
+    expire: "2017-05-28",
     voteStart: "2016-05-29 18:54",
     voteEnd: "2016-05-29 18:56",
     claims: [{
