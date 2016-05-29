@@ -393,5 +393,5 @@ const CompanyCaseDetail = React.createClass({
   }
 });
 
-ReactDOM.render(<CompanyCaseDetail user={mock.creditor}
+ReactDOM.render(<CompanyCaseDetail user={mock.admin}
                                    case={mock.companies[4]}/>, document.getElementById('react-content'));

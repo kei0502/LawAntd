@@ -25,4 +25,4 @@ const CompanyContract = React.createClass({
   }
 });
 
-ReactDOM.render(<CompanyContract user={mock.creditor} />, document.getElementById('react-content'));
+ReactDOM.render(<CompanyContract user={mock.admin} />, document.getElementById('react-content'));
