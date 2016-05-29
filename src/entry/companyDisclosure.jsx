@@ -57,7 +57,7 @@ const CompanyDisclosure = React.createClass({
                       </Row>
                     </Tabs.TabPane>
                     <Tabs.TabPane tab={<span><Icon type="plus" />新建披露</span>} key="3">
-                      <FormDisclosure companies={this.props.companies}></FormDisclosure>
+                      <FormDisclosure companies={companies}></FormDisclosure>
                     </Tabs.TabPane>
                   </Tabs>
                 </Col>
@@ -69,4 +69,4 @@ const CompanyDisclosure = React.createClass({
   }
 });
 
-ReactDOM.render(<CompanyDisclosure user={mock.creditor} files={mock.disclosureFiles}/>, document.getElementById('react-content'));
+ReactDOM.render(<CompanyDisclosure user={mock.admin} files={mock.disclosureFiles}/>, document.getElementById('react-content'));

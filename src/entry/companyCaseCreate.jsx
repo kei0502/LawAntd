@@ -93,4 +93,4 @@ const CompanyCase = React.createClass({
     );
   }
 });
-ReactDOM.render(<CompanyCase user={mock.creditor}/>, document.getElementById('react-content'));
+ReactDOM.render(<CompanyCase user={mock.admin}/>, document.getElementById('react-content'));

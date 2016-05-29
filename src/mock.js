@@ -33,9 +33,9 @@ module.exports = {
       phone: "13888888888"
     }],
     note: {name: "王五", phone: "13888888888"},
-    expire: "2016-05-28",
-    voteStart: "2016-05-29 18:54",
-    voteEnd: "2016-05-29 18:56",
+    expire: "2017-05-28",
+    voteStart: "2017-05-29 18:54",
+    voteEnd: "2017-05-29 18:56",
     claims: [{
       _id: "111",
       name: "中国移动",
@@ -1470,6 +1470,7 @@ module.exports = {
     {_id: '5', name: '平台管理员1', role: 5},
     {_id: '6', name: '债务公司1', role: 6},
     {_id: '7', name: '审计师1', role: 7}],
+  admin: {name: "李四", role: 2},
   platform: {name: "王五", role: 5},
   disclosureFiles: [{
     _id: '1',

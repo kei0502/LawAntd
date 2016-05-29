@@ -133,4 +133,4 @@ const CompanyDispatch = React.createClass({
   }
 });
 
-ReactDOM.render(<CompanyDispatch user={mock.creditor} dispatches={mock.dispatches}/>, document.getElementById('react-content'));
+ReactDOM.render(<CompanyDispatch user={mock.admin} dispatches={mock.dispatches}/>, document.getElementById('react-content'));

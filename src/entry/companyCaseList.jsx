@@ -233,4 +233,4 @@ const CompanyCaseList = React.createClass({
   }
 });
 
-ReactDOM.render(<CompanyCaseList user={mock.creditor} cases={mock.companies}/>, document.getElementById('react-content'));
+ReactDOM.render(<CompanyCaseList user={mock.admin} cases={mock.companies}/>, document.getElementById('react-content'));

@@ -40,4 +40,4 @@ const CompanyCaseVerify = React.createClass({
   }
 });
 
-ReactDOM.render(<CompanyCaseVerify user={mock.creditor} file="processv1.pdf"/>, document.getElementById('react-content'));
+ReactDOM.render(<CompanyCaseVerify user={mock.admin} file="processv1.pdf"/>, document.getElementById('react-content'));
