@@ -1,5 +1,6 @@
 import SiderPlatform from '../component/SiderPlatform';
 import Header from '../component/Header';
+import FormUser from '../component/FormUser';
 import Common from '../common/lib';
 import mock from '../mock';
 import { Row, Col, Table, Select, Modal, Button} from 'antd';
@@ -8,10 +9,7 @@ import React from 'react';
 
 const PlatformUser = React.createClass({
   getInitialState(){
-    return {typeSelect: "",users:this.props.users};
-  },
-  handleSelectChange(value) {
-    this.setState({typeSelect: value});
+    return {typeSelect:'',users:this.props.users,createVisible:false};
   },
   showModalChangePwd(id){
     Modal.confirm({
@@ -38,6 +36,24 @@ const PlatformUser = React.createClass({
       },
       onCancel() {}
     });
+  },
+  showModalCreateUser(){
+    this.setState({createVisible:true});
+  },
+  handleModalCreateSubmit() {
+    this.refs.formUser.validateFields((errors, values) => {
+      if (!!errors) {
+        console.log('Errors in form!!!');
+        return;
+      }
+      //...
+      console.log(values);
+      this.refs.formUser.resetFields();
+      this.setState({createVisible: false});
+    });
+  },
+  handleModalCreateCancel() {
+    this.setState({createVisible: false});
   },
   render() {
     const columns = [{
@@ -74,7 +90,10 @@ const PlatformUser = React.createClass({
               <Row style={{margin:'15px 0'}}>
                 <Col span={22} offset={1}>
                   <Row>
-                    <Col span={20} style={{textAlign:'right',marginTop:'8px'}}>
+                    <Col span={4}>
+                      <Button type="primary" onClick={this.showModalCreateUser}>新增用户</Button>
+                    </Col>
+                    <Col span={16} style={{textAlign:'right',marginTop:'8px'}}>
                       <span>类型筛选：</span>
                     </Col>
                     <Col span={4}>
@@ -93,6 +112,10 @@ const PlatformUser = React.createClass({
               </Row>
             </Col>
           </Row>
+          <Modal visible={this.state.createVisible}
+                 title="创建用户" onOk={this.handleModalCreateSubmit} onCancel={this.handleModalCreateCancel}>
+            <FormUser ref="formUser"></FormUser>
+          </Modal>
         </div>
     );
   }

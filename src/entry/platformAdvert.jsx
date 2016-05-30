@@ -1,5 +1,6 @@
 import SiderPlatform from '../component/SiderPlatform';
 import Header from '../component/Header';
+import FormAdvert from '../component/FormAdvert';
 import Common from '../common/lib';
 import mock from '../mock';
 import { Row, Col, Table, Select, Modal, Button} from 'antd';
@@ -8,7 +9,7 @@ import React from 'react';
 
 const PlatformAdvert = React.createClass({
   getInitialState(){
-    return {targetSelect: "",ads:this.props.ads};
+    return {targetSelect: "",ads:this.props.ads,createVisible:false};
   },
   handleTargetSelectChange(value) {
     this.setState({targetSelect: value});
@@ -30,6 +31,24 @@ const PlatformAdvert = React.createClass({
       onCancel() {
       }
     });
+  },
+  showModalCreateAdvert(){
+    this.setState({createVisible:true});
+  },
+  handleModalCreateSubmit() {
+    this.refs.formAdvert.validateFields((errors, values) => {
+      if (!!errors) {
+        console.log('Errors in form!!!');
+        return;
+      }
+      //...
+      console.log(values);
+      this.refs.formAdvert.resetFields();
+      this.setState({createVisible: false});
+    });
+  },
+  handleModalCreateCancel() {
+    this.setState({createVisible: false});
   },
   render() {
     const columns = [{
@@ -79,7 +98,10 @@ const PlatformAdvert = React.createClass({
               <Row style={{margin:'15px 0'}}>
                 <Col span={22} offset={1}>
                   <Row>
-                    <Col span={20} style={{textAlign:'right',marginTop:'8px'}}>
+                    <Col span={4}>
+                      <Button type="primary" onClick={this.showModalCreateAdvert}>新增律师广告</Button>
+                    </Col>
+                    <Col span={16} style={{textAlign:'right',marginTop:'8px'}}>
                       <span>状态筛选：</span>
                     </Col>
                     <Col span={4}>
@@ -98,6 +120,10 @@ const PlatformAdvert = React.createClass({
               </Row>
             </Col>
           </Row>
+          <Modal visible={this.state.createVisible}
+                 title="创建律师广告" onOk={this.handleModalCreateSubmit} onCancel={this.handleModalCreateCancel}>
+            <FormAdvert ref="formAdvert"></FormAdvert>
+          </Modal>
         </div>
     );
   }

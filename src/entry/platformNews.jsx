@@ -2,7 +2,8 @@ import SiderPlatform from '../component/SiderPlatform';
 import Header from '../component/Header';
 import Common from '../common/lib';
 import mock from '../mock';
-import { Row, Col, Table, Tabs, Icon, Button, Modal} from 'antd';
+import { Row, Col, Table, Tabs, Icon, Button, Modal, Input, Form, TreeSelect} from 'antd';
+const FormItem = Form.Item;
 import ReactDOM from 'react-dom';
 import React from 'react';
 import Editor from '../component/Editor';
@@ -30,9 +31,13 @@ const PlatformNews = React.createClass({
     });
   },
   onSubmit(){
-    console.log(this.refs.editor.state.value);
+    console.log(this.refs.title+" "+this.refs.editor.state.value);
   },
   render() {
+    const formItemLayout = {
+      labelCol: {span: 2},
+      wrapperCol: {span: 22}
+    };
     const columns = [{
       title: '标题',
       dataIndex: 'title',
@@ -56,6 +61,9 @@ const PlatformNews = React.createClass({
         return(<Button type="ghost" size="small" onClick={()=>this.showModalDeleteNews(record._id)}>删除</Button>);
       }
     }];
+    const treeProps = {
+      treeData: this.props.navbars
+    };
     let news = this.state.news;
     return (
         <div>
@@ -72,8 +80,23 @@ const PlatformNews = React.createClass({
                           dataSource={news} rowKey={record => record._id}/>
                       </Tabs.TabPane>
                       <Tabs.TabPane tab={<span><Icon type="plus" />发布新闻</span>} key="2">
-                        <Editor ref="editor"/>
-                        <Button type="primary" onClick={()=>this.onSubmit()}>确定</Button>
+                        <Form>
+                          <FormItem {...formItemLayout}
+                              label="标题：" required>
+                            <Input type="text" ref="title" placeholder="标题"/>
+                          </FormItem>
+                          <FormItem {...formItemLayout}
+                              label="网站栏目：" required>
+                            <TreeSelect {...treeProps}/>
+                          </FormItem>
+                          <FormItem {...formItemLayout}
+                              label=" ">
+                            <Editor ref="editor"/>
+                          </FormItem>
+                          <FormItem wrapperCol={{ span: 16, offset: 6 }} style={{ marginTop: '24px' }}>
+                            <Button type="primary" htmlType="button" onClick={()=>this.onSubmit()}>确定</Button>
+                          </FormItem>
+                        </Form>
                       </Tabs.TabPane>
                     </Tabs>
                   </Row>
@@ -86,4 +109,4 @@ const PlatformNews = React.createClass({
   }
 });
 
-ReactDOM.render(<PlatformNews user={mock.platform} news={mock.news}/>, document.getElementById('react-content'));
+ReactDOM.render(<PlatformNews user={mock.platform} news={mock.news} navbars={mock.navbars}/>, document.getElementById('react-content'));

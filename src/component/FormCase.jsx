@@ -28,11 +28,6 @@ let FormCase = React.createClass({
         {required: true, type:'date', message: '请选择案件受理日期'}
       ]
     });
-    const statementDateProps = getFieldProps('statementDate', {
-      rules: [
-        {required: true, type:'date', message: '请选择案件结算日期'}
-      ]
-    });
     const endDateProps = getFieldProps('endDate', {
       rules: [
         {required: true, type:'date', message: '请选择案件申请截止日期'}
@@ -45,12 +40,6 @@ let FormCase = React.createClass({
     });
     return (
         <Form horizontal form={this.props.form}>
-          <FormItem
-              labelCol={{span: 6}}
-              wrapperCol={{span: 8}}
-              label="案件编码：">
-            <Input type="text" disabled placeholder="通过审核后由平台提供"/>
-          </FormItem>
           <FormItem
               {...formItemLayout}
               label="案件类型：" required>
@@ -68,11 +57,6 @@ let FormCase = React.createClass({
           </FormItem>
           <FormItem
               {...formItemLayout}
-              label="结算日期：" required>
-            <DatePicker {...statementDateProps} style={{width:'36%'}} placeholder="结算日期"/>
-          </FormItem>
-          <FormItem
-              {...formItemLayout}
               label="申请截止日期：" required>
             <DatePicker {...endDateProps} style={{width:'36%'}} placeholder="申请截止日期"/>
           </FormItem>
@@ -81,17 +65,6 @@ let FormCase = React.createClass({
               wrapperCol={{span: 8}}
               label="债权申报电话：" required hasFeedback>
             <Input {...caseContactProps} type="text" placeholder="债权申报电话"/>
-          </FormItem>
-          <FormItem
-              {...formItemLayout}
-              label="债权币种：" required>
-            <RadioGroup defaultValue="1" ref="caseCurrency">
-              <Radio value="1">人民币</Radio>
-              <Radio value="2">美元</Radio>
-              <Radio value="3">欧元</Radio>
-              <Radio value="4">英镑</Radio>
-            </RadioGroup>
-            <span><Icon type="info-circle-o" />币率：</span>
           </FormItem>
           <FormItem wrapperCol={{ span: 16, offset: 6 }} style={{ marginTop: '24px' }}>
             <Button type="primary" htmlType="button" onClick={this.handleSubmit}>确定</Button>

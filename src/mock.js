@@ -1509,5 +1509,86 @@ module.exports = {
     {_id: 5, name: '孙七', contact: '13333333334', description: '介绍一下自己...', target: [3]},
     {_id: 6, name: '周八', contact: '13333333334', description: '介绍一下自己...', target: [4, 6]},
     {_id: 7, name: '吴九', contact: '13333333334', description: '介绍一下自己...', target: [7, 1]},
-    {_id: 8, name: '郑十', contact: '13333333334', description: '介绍一下自己...', target: [2, 3, 6, 7]}]
+    {_id: 8, name: '郑十', contact: '13333333334', description: '介绍一下自己...', target: [2, 3, 6, 7]}],
+  navbars: [{
+    label: '最新资讯',
+    value: '0-0',
+    key: '0-0'
+  }, {
+    label: '市场机构',
+    value: '0-1',
+    key: '0-1',
+    children: [{
+      label: '管理人',
+      value: '0-1-0',
+      key: '0-1-0'
+    }, {
+      label: '投资机构',
+      value: '0-1-1',
+      key: '0-1-1'
+    }, {
+      label: '其他机构',
+      value: '0-1-2',
+      key: '0-1-2'
+    }]
+  }, {
+    label: '法律规则',
+    value: '0-2',
+    key: '0-2',
+    children: [{
+      label: '法律',
+      value: '0-2-0',
+      key: '0-2-0'
+    }, {
+      label: '司法解释',
+      value: '0-2-1',
+      key: '0-2-1'
+    }, {
+      label: '行政法规',
+      value: '0-2-2',
+      key: '0-2-2'
+    }]
+  }, {
+    label: '服务专区',
+    value: '0-3',
+    key: '0-3',
+    children: [{
+      label: '投资征询公告',
+      value: '0-3-0',
+      key: '0-3-0'
+    }, {
+      label: '拍卖公告',
+      value: '0-3-1',
+      key: '0-3-1'
+    }, {
+      label: '培训公告',
+      value: '0-3-2',
+      key: '0-3-2'
+    }]
+  },{
+    label: '深度阅读',
+    value: '0-4',
+    key: '0-4',
+    children: [{
+      label: '重案追踪',
+      value: '0-4-0',
+      key: '0-4-0'
+    }, {
+      label: '经典案例',
+      value: '0-4-1',
+      key: '0-4-1'
+    }, {
+      label: '学术前沿',
+      value: '0-4-2',
+      key: '0-4-2'
+    }, {
+      label: '个人破产',
+      value: '0-4-3',
+      key: '0-4-3'
+    }, {
+      label: '调研报告',
+      value: '0-4-4',
+      key: '0-4-4'
+    }]
+  }]
 };

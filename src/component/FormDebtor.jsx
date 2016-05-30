@@ -54,11 +54,7 @@ let FormDebtor = React.createClass({
         {required: true, message: '请填写法定代表人'}
       ]
     });
-    const companyFinancePersonProps = getFieldProps('companyFinancePerson', {
-      rules: [
-        {required: true, message: '请填写财务负责人'}
-      ]
-    });
+    const companyFinancePersonProps = getFieldProps('companyFinancePerson');
     const companyAddressProps = getFieldProps('companyAddress', {
       rules: [
         {required: true, message: '请填写住所地址'}
@@ -83,7 +79,7 @@ let FormDebtor = React.createClass({
           </FormItem>
           <FormItem
               {...formItemLayout}
-              label="财务负责人：" required hasFeedback>
+              label="财务负责人：">
             <Input {...companyFinancePersonProps} type="text" placeholder="财务负责人"/>
           </FormItem>
           <FormItem
