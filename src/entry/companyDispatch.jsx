@@ -4,7 +4,7 @@ import FormResponse from '../component/FormResponse';
 import FormPost from '../component/FormPost';
 import mock from '../mock';
 import moment from 'moment';
-import { Row, Col, Table, Tabs, Icon, Select } from 'antd';
+import { Row, Col, Table, Tabs, Icon, Select, Button } from 'antd';
 import ReactDOM from 'react-dom';
 import React from 'react';
 
@@ -38,7 +38,7 @@ const CompanyDispatch = React.createClass({
       }
     });
     let dispatchesReceive = this.state.dispatches.filter(dispatch=>(!this.state.companySelect || dispatch.company._id === this.state.companySelect));
-    let dispatchesSend = this.state.dispatches.filter(dispatch=>(dispatch.response && (!this.state.companySelect || dispatch.company._id === this.state.companySelect)));
+    let dispatchesSend = this.state.dispatches.filter(dispatch=>(!dispatch.response && (!this.state.companySelect || dispatch.company._id === this.state.companySelect)));
 
     const columns = [{
         title: "文件",
@@ -46,7 +46,7 @@ const CompanyDispatch = React.createClass({
         width: '30%',
         render: (text, record)=>(<a href={record.file} target="_blank">{record.name}</a>)
       }, {
-        title: "公司",
+        title: "发文对象",
         key: "company",
         width: '30%',
         dataIndex: "company",
@@ -59,12 +59,10 @@ const CompanyDispatch = React.createClass({
           }
         }
       }, {
-        title: "反馈",
-        key: "response",
+        title: "操作",
+        key: "action",
         width: "40%",
-        dataIndex: "response",
-        render: (response, record)=>(
-            <FormResponse response={response} handleSubmit={this.handleResponseSubmit(record._id)}/>),
+        render: (response, record)=>(<Button type="primary">确认发文</Button>),
         sorter: (a, b)=> {
           if (!a.response) {
             return b.response ? -1 : 0;
@@ -121,7 +119,7 @@ const CompanyDispatch = React.createClass({
                       </Row>
                     </Tabs.TabPane>
                     <Tabs.TabPane tab={<span><Icon type="plus" />新建发文</span>} key="3">
-                      <FormPost companies={companies}></FormPost>
+                      <FormPost companies={companies}/>
                     </Tabs.TabPane>
                   </Tabs>
                 </Col>

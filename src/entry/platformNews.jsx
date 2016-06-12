@@ -2,7 +2,7 @@ import SiderPlatform from '../component/SiderPlatform';
 import Header from '../component/Header';
 import Common from '../common/lib';
 import mock from '../mock';
-import { Row, Col, Table, Tabs, Icon, Button, Modal, Input, Form, TreeSelect} from 'antd';
+import { Row, Col, Table, Tabs, Icon, Button, Modal, Input, Form, TreeSelect, Upload} from 'antd';
 const FormItem = Form.Item;
 import ReactDOM from 'react-dom';
 import React from 'react';
@@ -89,9 +89,11 @@ const PlatformNews = React.createClass({
                               label="网站栏目：" required>
                             <TreeSelect {...treeProps}/>
                           </FormItem>
-                          <FormItem {...formItemLayout}
-                              label=" ">
+                          <FormItem {...formItemLayout}>
                             <Editor ref="editor"/>
+                          </FormItem>
+                          <FormItem wrapperCol={{ span: 22, offset: 2 }}>
+                            <Upload><Button><Icon type="upload"/> 上传文件</Button></Upload>
                           </FormItem>
                           <FormItem wrapperCol={{ span: 16, offset: 6 }} style={{ marginTop: '24px' }}>
                             <Button type="primary" htmlType="button" onClick={()=>this.onSubmit()}>确定</Button>

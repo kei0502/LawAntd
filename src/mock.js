@@ -1229,6 +1229,13 @@ module.exports = {
     company: {_id: "112", name: "中国电信"},
     response: {style: 3, text: "不同意"}
   }],
+  contracts: [
+    {_id: "contract1", admin: {name: "金杜"}, name: "平台使用协议——金杜", file: "/contract1.pdf"},
+    {_id: "contract2", admin: {name: "金茂凯德"}, name: "平台使用协议——金茂凯德", file: "/contract1.pdf"},
+    {_id: "contract3", admin: {name: "序伦"}, name: "平台使用协议——序伦", file: "/contract1.pdf"},
+    {_id: "contract4", admin: {name: "上正"}, name: "平台使用协议——上正", file: "/contract1.pdf"},
+    {_id: "contract5", admin: {name: "汉商"}, name: "平台使用协议——汉商", file: "/contract1.pdf"},
+  ],
   homepage_ad: [
     {_id: "ad1", pic: "/pics/IMG_3529.jpg"},
     {_id: "ad2", pic: "/pics/IMG_3577.jpg"},

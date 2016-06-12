@@ -4,6 +4,7 @@ import FormCourt from '../component/FormCourt';
 import FormCase from '../component/FormCase';
 import FormDebtor from '../component/FormDebtor';
 import FormLiquidation from '../component/FormLiquidation';
+import FormComplete from '../component/FormComplete';
 import mock from '../mock';
 import { Row, Col, Breadcrumb, Card, Steps} from 'antd';
 const Step = Steps.Step;
@@ -25,7 +26,7 @@ const CompanyCase = React.createClass({
   },
   handleSubmit() {
     let s = this.state.currentStep + 1;
-    if (s != 4) { //caseSteps.length
+    if (s != 5) { //caseSteps.length
       this.setState({
         currentStep: s
       });
@@ -59,6 +60,12 @@ const CompanyCase = React.createClass({
             <FormLiquidation onSubmit={this.handleSubmit}/>
           </Card>
       );
+    } else if (this.state.currentStep == 4) {
+      return (
+          <Card title="完善案件信息" style={{marginTop: '20px'}}>
+            <FormComplete onSubmit={this.handleSubmit}/>
+          </Card>
+      );
     }
   },
   render() {
@@ -70,6 +77,8 @@ const CompanyCase = React.createClass({
           title: (<a href="#" onClick={this.goStep(2)}>案件信息</a>)
         }, {
           title: (<a href="#" onClick={this.goStep(3)}>管理人信息</a>)
+        }, {
+          title: (<a href="#" onClick={this.goStep(4)}>完善案件信息</a>)
         }].map((s, i) => <Step key={i} title={s.title}></Step>);
     return (
         <div>

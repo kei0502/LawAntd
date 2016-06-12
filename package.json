@@ -62,7 +62,9 @@
     "platformCase": "./src/entry/platformCase.jsx",
     "platformFile": "./src/entry/platformFile.jsx",
     "platformAdvert": "./src/entry/platformAdvert.jsx",
-    "platformNews": "./src/entry/platformNews.jsx"
+    "platformNews": "./src/entry/platformNews.jsx",
+    "platformHomepageAd": "./src/entry/platformHomepageAd.jsx",
+    "platformContract": "./src/entry/platformContract.jsx"
   },
   "dependencies": {
     "antd": "^1.1.0",

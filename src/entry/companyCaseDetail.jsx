@@ -6,7 +6,7 @@ import FormPost from '../component/FormPost';
 import FormDisclosure from '../component/FormDisclosure';
 import mock from '../mock';
 import moment from 'moment';
-import { Row, Col, Breadcrumb, Button, Table, Modal, Tabs, Steps, Form, Radio, Icon, Input} from 'antd';
+import { Row, Col, Breadcrumb, Button, Table, Modal, Tabs, Steps, Form, Radio, Icon, Input, Upload} from 'antd';
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
 import ReactDOM from 'react-dom';
@@ -36,6 +36,15 @@ const CompanyCaseDetail = React.createClass({
       distributionVisible: false,
       qaReplyVisible: false
     });
+  },
+  showClaimList() {
+    window.open("/processv1.pdf");
+    Modal.confirm({
+      title: "是否确认债权表",
+      content: "请在新页面中查看生成的债权表",
+      onOk(){},
+      onCancel(){}
+    })
   },
   showVoteResult() {
     const columns = [{
@@ -97,6 +106,9 @@ const CompanyCaseDetail = React.createClass({
         (<Button key="btn2" type="ghost" onClick={this.assignVote}>安排投票</Button>)];
     else if(status==5)
       return(<Button type="ghost" onClick={this.showModalCloseCase}>关闭项目</Button>);
+  },
+  showResultConfirm(){
+    Modal.confirm({title:'您确认投票结果，确认后投票结果将无法更改', onOk(){}, onCancel(){}});
   },
   showModalAuthority(id){
     let forms=this.state.forms,that=this;
@@ -206,10 +218,10 @@ const CompanyCaseDetail = React.createClass({
   },
   showMeeting(status){
     if(status<=3){
-      return(<FormVote persons={mock.persons}></FormVote>);
+      return(<FormVote persons={mock.persons}/>);
     }
     else if(status==4){
-      return(<FormVoteInput></FormVoteInput>);
+      return(<FormVoteInput/>);
     }
     else if(status==5){
       return this.showVoteResult();
@@ -338,10 +350,10 @@ const CompanyCaseDetail = React.createClass({
               <Row style={{marginTop:'10px'}}>
                 <Col span={22} offset={1}>
                   <Tabs activeKey={this.state.activeKey} onChange={this.onTabChange}>
-                    <Tabs.TabPane tab={<span><Icon type="copy" />管理债权申报</span>} key="1">{this.showCreditorManage(theCase.status)}</Tabs.TabPane>
-                    <Tabs.TabPane tab={<span><Icon type="file-text" />报告发文</span>} key="2"><FormPost persons={mock.persons}></FormPost></Tabs.TabPane>
-                    <Tabs.TabPane tab={<span><Icon type="info-circle-o" />信息披露</span>} key="3"><FormDisclosure></FormDisclosure></Tabs.TabPane>
-                    <Tabs.TabPane tab={<span><Icon type="team" />债权人会议</span>} key="4">{this.showMeeting(theCase.status)}</Tabs.TabPane>
+                    <Tabs.TabPane tab={<span><Icon type="copy" />管理债权申报</span>} key="1">{this.showCreditorManage(theCase.status)}<Button type="ghost" onClick={this.showClaimList}>生成债权表</Button></Tabs.TabPane>
+                    <Tabs.TabPane tab={<span><Icon type="file-text" />报告发文</span>} key="2"><FormPost persons={mock.persons}/></Tabs.TabPane>
+                    <Tabs.TabPane tab={<span><Icon type="info-circle-o" />信息披露</span>} key="3"><FormDisclosure/></Tabs.TabPane>
+                    <Tabs.TabPane tab={<span><Icon type="team" />债权人会议</span>} key="4">{this.showMeeting(theCase.status)}<Button type="ghost" style={{marginTop:16,marginBottom:16}} onClick={this.showResultConfirm}>投票结果确认</Button></Tabs.TabPane>
                     <Tabs.TabPane tab={<span><Icon type="retweet" />债权人问题</span>} key="5">{this.getQATable()}</Tabs.TabPane>
                   </Tabs>
                 </Col>

@@ -16,6 +16,7 @@ const CompanyContract = React.createClass({
               <Row style={{margin:'15px 0'}}>
                 <Col span={22} offset={1}>
                   <h2>协议信息</h2>
+                  <iframe height="1000" width="100%" src={this.props.contract.file}/>
                 </Col>
               </Row>
             </Col>
@@ -25,4 +26,4 @@ const CompanyContract = React.createClass({
   }
 });
 
-ReactDOM.render(<CompanyContract user={mock.admin} />, document.getElementById('react-content'));
+ReactDOM.render(<CompanyContract user={mock.admin} contract={mock.contracts[0]}/>, document.getElementById('react-content'));
