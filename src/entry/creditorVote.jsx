@@ -106,7 +106,7 @@ const CreditorVote = React.createClass({
                                                 <Menu.Item key={vote._id}><a target="_blank"
                                                                              href={vote.file}>{vote.name}</a></Menu.Item>)) : undefined}</Menu>)
                                             button = (<Dropdown overlay={menu}>
-                                                <a href="#" className="ant-dropdown-link" onClick={noop}>查看投票项目 <Icon
+                                                <a href="#" className="ant-dropdown-link" onClick={noop}>查看会议文件 <Icon
                                                     type="down"/></a>
                                             </Dropdown>);
                                             break;

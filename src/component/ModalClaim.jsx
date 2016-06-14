@@ -15,6 +15,7 @@ let ModalClaim = React.createClass({
             let claim = this.props.claim;
             return {
                 disabled: this.props.disabled,
+                creditorStyle: claim.creditorStyle,
                 name: claim.name,
                 representative: claim.representative,
                 phoneRepresentative: claim.phone_representative,
@@ -55,6 +56,7 @@ let ModalClaim = React.createClass({
         } else {
             return {
                 disabled: false,
+                creditorStyle: false,
                 name: undefined,
                 representative: undefined,
                 phoneRepresentative: undefined,
@@ -132,6 +134,7 @@ let ModalClaim = React.createClass({
             let claim = props.claim;
             this.setState({
                 disabled: props.disabled,
+                creditorStyle: claim.creditorStyle,
                 name: claim.name,
                 representative: claim.representative,
                 phoneRepresentative: claim.phone_representative,
@@ -172,6 +175,7 @@ let ModalClaim = React.createClass({
         } else {
             this.setState({
                 disabled: false,
+                creditorStyle: false,
                 name: undefined,
                 representative: undefined,
                 phoneRepresentative: undefined,
@@ -217,6 +221,14 @@ let ModalClaim = React.createClass({
         const attachmentRadios = attachmentTypes.map((attachment, i)=>(
             <Radio key={"attachment_"+(i+1)} value={i+1}>{attachment}</Radio>));
         var form = (<Form horizontal form={this.props.form}>
+            <FormItem {...formItemLayout} label="债权人性质：" required>
+                <Select {...getFieldProps('creditorStyle', {})} value={this.state.creditorStyle}
+                                                                onChange={this.handleChangeValue("creditorStyle")}
+                                                                disabled={this.state.disabled}>
+                    <Option key="false" value={false}>企业</Option>
+                    <Option key="true" value={true}>自然人</Option>
+                </Select>
+            </FormItem>
             <FormItem {...formItemLayout} label="债权人：" required>
                 <Input {...getFieldProps('name', {})} value={this.state.name}
                                                       onChange={this.handleChangeEvent("name")}

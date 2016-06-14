@@ -22,20 +22,20 @@ let FormCase = React.createClass({
       labelCol: {span: 6},
       wrapperCol: {span: 16}
     };
-    const { getFieldProps, getFieldError, isFieldValidating } = this.props.form;
-    const startDateProps = getFieldProps('startDate', {
+    const { getFieldProps } = this.props.form;
+    const caseCodeProps = getFieldProps('caseCode', {
       rules: [
-        {required: true, type:'date', message: '请选择案件受理日期'}
+        {required: true, message: '请输入案件代码'}
       ]
     });
-    const endDateProps = getFieldProps('endDate', {
+    const caseNameProps = getFieldProps('caseName', {
       rules: [
-        {required: true, type:'date', message: '请选择案件申请截止日期'}
+        {required: true, message: '请输入案件名称'}
       ]
     });
-    const caseContactProps = getFieldProps('caseContact', {
+    const caseSimpleProps = getFieldProps('caseContact', {
       rules: [
-        {required: true, message: '请输入债权申报电话'}
+        {required: true, message: '请输入案件简称'}
       ]
     });
     return (
@@ -50,21 +50,23 @@ let FormCase = React.createClass({
               <Radio value="4">自行清算</Radio>
             </RadioGroup>
           </FormItem>
-          <FormItem
-              {...formItemLayout}
-              label="受理日期：" required>
-              <DatePicker {...startDateProps} style={{width:'36%'}} placeholder="受理日期"/>
-          </FormItem>
-          <FormItem
-              {...formItemLayout}
-              label="申请截止日期：" required>
-            <DatePicker {...endDateProps} style={{width:'36%'}} placeholder="申请截止日期"/>
-          </FormItem>
+            <FormItem
+                labelCol={{span: 6}}
+                wrapperCol={{span: 8}}
+                label="案件代码：" required hasFeedback>
+                <Input {...caseCodeProps} type="text" placeholder="案件代码"/>
+            </FormItem>
+            <FormItem
+                labelCol={{span: 6}}
+                wrapperCol={{span: 8}}
+                label="案件名称：" required hasFeedback>
+                <Input {...caseNameProps} type="text" placeholder="案件名称"/>
+            </FormItem>
           <FormItem
               labelCol={{span: 6}}
               wrapperCol={{span: 8}}
-              label="债权申报电话：" required hasFeedback>
-            <Input {...caseContactProps} type="text" placeholder="债权申报电话"/>
+              label="案件简称：" required hasFeedback>
+            <Input {...caseSimpleProps} type="text" placeholder="案件简称"/>
           </FormItem>
           <FormItem wrapperCol={{ span: 16, offset: 6 }} style={{ marginTop: '24px' }}>
             <Button type="primary" htmlType="button" onClick={this.handleSubmit}>确定</Button>
